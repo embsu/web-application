@@ -1,0 +1,228 @@
+/*----------------TEEMAT-----------------*/
+
+/* Default (light) theme variables */
+:root {
+    --background-color: #dae4da;
+    /* --background-image: url("../assets/pictures/tausta1.jpg"); */
+    --esittely-color: #f0f0f0;
+    --text-color: #000000;
+    --navbar-color: rgba(255, 255, 255, 0.3); 
+    --navbar-linkit-color: #715e54;
+    --navbar-li-hover: #213521;
+    --switch-backg-color: #a4b59b;
+    --switch-border-color: #000000;
+    --switch-color: #000000;
+  }
+  
+  /* Dark theme variables */
+.dark-theme {
+    --background-color: #090c0b;
+    --background-image: url("../assets/pictures/dark18129294.jpg");
+    --text-color: #ffffff;
+    --navbar-color: rgba(45, 45, 45, 0.5); /* vika aiheuttaa transparencyn :) <3*/
+    --navbar-linkit-color: #ffffff;
+    --navbar-li-hover: #2e2037;
+
+    --switch-backg-color: #444145;
+    --switch-color: #ffffff;
+   }
+
+/*----------------BODY-----------------*/
+body {
+    background-image: var(--background-image); 
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: auto; /*täyttää koko sivun vaikka skaalaus oisi miten sattuu, auto ja cover parhaat*/  
+    background-position: 45%;   /*mistä kohti kuvaa vasemmalta oikealle kuva näkyy jos on iso*/
+    background-attachment: fixed;   /* asettaa taustakuvan paikoilleen jolloin sisältö liikkuu mutta taustakuva ei*/
+    background-color: var(--background-color);  /*tää näkyy jos taustakuvan lataamisessa ongelmia*/
+    height: 100vh; /* Set the height of the container to 100% of the viewport height */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: var(--text-color); 
+  
+    }
+  
+/*----------------PÄÄOTSIKKO & NAVBAR-----------------*/
+#paaotsikko {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #a4b59b;
+    font-size: 50px;
+    text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
+     -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
+      0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
+     margin-left: 70px; 
+  }
+
+.tassu {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px; 
+    vertical-align: middle;
+  }
+
+  /* Style for the navbar container */
+.navbar { /* koko navbar pohja ja parent elementti*/
+    height: 20vh;
+    display: flex; /* tällä menee otsikon tasolle*/
+    align-items: center; /* tällä menee otsikon tasolle mutta keskelle*/
+    justify-content: space-between;
+    background-color: var(--navbar-color);
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+    
+nav ul {
+    list-style-type: none;
+    margin-right: 3px; 
+    display: flex; /* menee vierekkäin */
+}
+
+nav li {
+    margin-right: 30px;
+
+}
+
+nav a {
+    text-decoration: none; /*ei alleviivauksia linkissä*/
+    color: var(--navbar-linkit-color);
+    font-size: 19px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 7px;
+    border-radius: 10px; 
+}
+
+nav li a:hover{
+    color: var(--esittely-color);
+    background-color: var(--navbar-linkit-color); 
+}
+
+#switch {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--switch-backg-color);
+    color: var(--switch-color);
+    border: 2px outset var(--switch-border-color);
+    border-radius: 10px; 
+    padding: 10px 10px; 
+    margin-right: 100px;
+}
+
+#switch:hover {
+    color: var(--background-color);
+    background-color: var(--switch-color);
+    border: 2px outset var(--background-color);
+}
+    
+/*----------------ESITTELY-----------------*/
+
+.container1 {   /*tervehdys container */
+
+    align-self: center;
+    max-width: 80%;
+    /* align-items: center; */
+    
+    background-color: var(--esittely-color);
+    display: flex;
+    
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+     
+}
+/* Style the left column (containing the dog image) */
+.left {
+    
+    flex: 1; /* Take up 1/2 of the container width */
+    padding: 20px; 
+    margin-left: 100px;
+}
+
+/* Style the right column (containing the welcoming text) */
+.right {
+    flex: 1; /* Take up 1/2 of the container width */
+    padding: 20px;
+    background-color: white;
+    ;
+}
+
+/* Style the welcoming text */
+h1 {
+    font-size: 24px;
+    color: #333; /* Text color */
+}
+
+
+/* Style the additional information at the bottom */
+.bottom-info {
+    background-color: #f0f0f0; /* Grey background color */
+    text-align: center;
+    padding: 10px 0;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Style the paragraph inside the bottom info div */
+.bottom-info p {
+    font-size: 16px;
+    color: #555; /* Text color */
+}
+
+
+/*----------------GALLERIA-----------------*/
+
+
+#gallery {        /*koko gallerian "säiliö" kuvineen ja teksteineen*/
+    display: grid;  /* more flexible and responsive layout with grip, allows to define how items should be placed in rows/columns */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /*creates as many columns as possible based on the available space, ensures thah each column will be at least 250 pixels wide, but no wider than 1fr*/
+    gap: 20px; /* space between rows and columns //horizo */
+    padding: 50px;
+    background-color: var(--navbar-color);
+    
+    
+    
+}
+
+.kuvat {      /*itse sisältö eli kuva ja teksti*/
+    /* margin: 60px 10px 60px 10px; ylä, oikea, ala, vasen */
+    border: 2px solid var(--navbar-linkit-color);
+    background-color: var(--navbar-color);
+    padding: 20px;
+    border-radius: 31px;   
+    transition: transform 0.5s ease-in-out;
+
+}
+
+
+.kuvat img {  /* pelkkä kuva*/
+
+    max-width: 100%; /* Limit image width to its container */
+    height: auto;    /* Maintain the aspect ratio */
+    border-radius: 20px;
+    
+}
+
+
+.kuvat:hover {
+
+    transform: scale(1.1);
+    border: 2px solid var(--navbar-linkit-color);
+    
+}
+
+.kuvat .desc {
+ 
+    background: rgba(48, 48, 48, 0.7);
+    color: white;
+    border: 1px solid #474747;
+    padding: 10px;
+    text-align: center;
+    transform: translateY(90%);   /*teksi on 100px tai % kuvan alapuolella*/
+    transition: transform 0.3s ease-in-out; /* 0.3 sec viive, täytyy olla täällä koska */
+    
+}
+
+.kuvat:hover .desc {
+    transform: translateY(10%);   /*teksti siirtyy kuvan päälle*/
+    border-radius: 31px;
+}
