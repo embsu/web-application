@@ -11,7 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
         </script>
-    <script src="assets/javascript/headfoot.js"></script>
+    <script src="assets/javascript/headfoot.js" defer></script>
+
+    <!-- <script src="assets/javascript/underline.js"></script> -->
 
 </head>
 
@@ -19,56 +21,42 @@
     <!-- <button id="switch">Switch Theme</button> -->
     <div id="header"></div>
 
-    <section id="about">
+    <div id="galtsuTxtjaButtons">
 
-        <h2>Perhealbumi</h2>
-        <p>Täältä löydät mun lemppari kuvat, valitse haluatko katsella mielummin pentukuvia vai bigboy pics</p>
+        <h2>Galleria</h2>
+        <p>Täältä löydät mun lemppari kuvat albumeittain. Valitse minkä albumin kuvia haluat nähdä. <br>
+        Huom! Jos kuvat ei näy, niin githubin päässä vika, koska kuvat fetchataan sieltä.</p>
 
-    </section>
+        <div class="albums">
+        <button id="showPuppy" class="galButton"> <img src="assets/pictures/photo-album.png" alt="albumi">Pentuna</button>
+        <button id="showAdult" class="galButton"> <img src="assets/pictures/photo-album.png" alt="albumi">Iso poika</button>
+        <button id="showFriends" class="galButton"> <img src="assets/pictures/photo-album.png" alt="albumi">Perhe ja kamut</button>
+       
+        </div>
 
-    <div id="gallery">
+    </div>
 
-        <!-- <div class="section">  PENTUKUVAT -->
-
-            <!-- <h2>Pentukuvat</h2> 
-            <button id="showPuppy">Näytä pentukuvat</button> -->
-
-            <div class="kuvat">
-                <a target="_blank" href="assets/pictures/pentu1.jpeg"> <!--tää aukasee isona sit ku klikkaa -->
-                    <img src="assets/pictures/pentu1.jpeg" alt="leikki">
-                </a>
-                <div class="desc">Yksin</div>
-            </div>
+    <div id="gallery">  <!--tulevat suoraan fetchillä githubista -->
         
 
-        <!-- <div class="section">    AIKUISKUVAT -->
-            <!-- <h2>Aikuiskuvat</h2>
-            <button id="showGrownUp">Näytä ison pojan kuvat</button> -->
-
-            <div class="kuvat">
-                <a target="_blank" href="assets/pictures/ramse2.jpg">
-                    <img src="assets/pictures/ramse2.jpg" alt="pose">
-                </a>
-                <div class="desc">Tuuli tuivertaa</div>
-            </div>
-
-            <div class="kuvat">
-                <a target="_blank" href="assets/pictures/ramse3.jpg">
-                    <img src="assets/pictures/ramse3.jpg" alt="pose2">
-                </a>
-                <div class="desc">Komeana</div>
-            </div>
-        <!-- </div> -->
+      
+      
 
 
 
     </div>
 
     <script src="assets/javascript/switch.js"></script>
-    <!-- <script src="assets/javascript/gallery.js"></script> -->
+   
+
+    <!-- <script src="assets/javascript/backtotop.js"></script> -->
+    <script src="assets/javascript/gallery.js"></script>
+
+
 </body>
 
 <footer>
+    
     <div id="footer"></div>
 </footer>
 

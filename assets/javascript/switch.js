@@ -1,4 +1,4 @@
-console.log("Script loaded");
+console.log("Switch.js Script loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM content loaded");

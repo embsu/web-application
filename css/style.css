@@ -4,14 +4,15 @@
 :root {
     --background-color: #dae4da;
     /* --background-image: url("../assets/pictures/tausta1.jpg"); */
-    --esittely-color: #f0f0f0;
+    --esittely-color: #f0f0f0e9;
     --text-color: #000000;
     --navbar-color: rgba(255, 255, 255, 0.3); 
-    --navbar-linkit-color: #715e54;
-    --navbar-li-hover: #213521;
+    --navbar-linkit-color: #555;
+    --navbar-li-hover: #94a594;
     --switch-backg-color: #a4b59b;
     --switch-border-color: #000000;
     --switch-color: #000000;
+    --kansio-hover: #c9d1c5;
   }
   
   /* Dark theme variables */
@@ -29,7 +30,7 @@
 
 /*----------------BODY-----------------*/
 body {
-    background-image: var(--background-image); 
+    /* background-image: var(--background-image);  */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: auto; /*täyttää koko sivun vaikka skaalaus oisi miten sattuu, auto ja cover parhaat*/  
     background-position: 45%;   /*mistä kohti kuvaa vasemmalta oikealle kuva näkyy jos on iso*/
@@ -45,15 +46,20 @@ body {
     }
   
 /*----------------PÄÄOTSIKKO & NAVBAR-----------------*/
+#menu-icon {
+    display: none;
+}
+
 #paaotsikko {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #a4b59b;
-    font-size: 50px;
+    font-size: 40px;
     text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
      -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
       0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
      margin-left: 70px; 
   }
+  
 
 .tassu {
     width: 40px;
@@ -62,20 +68,22 @@ body {
     vertical-align: middle;
   }
 
+
   /* Style for the navbar container */
 .navbar { /* koko navbar pohja ja parent elementti*/
-    height: 20vh;
+    /* height: 15vh; */
     display: flex; /* tällä menee otsikon tasolle*/
     align-items: center; /* tällä menee otsikon tasolle mutta keskelle*/
     justify-content: space-between;
     background-color: var(--navbar-color);
     margin-bottom: 20px;
     margin-top: 10px;
+    position: relative;
 }
     
 nav ul {
     list-style-type: none;
-    margin-right: 3px; 
+    margin-right: 150px; 
     display: flex; /* menee vierekkäin */
 }
 
@@ -87,7 +95,7 @@ nav li {
 nav a {
     text-decoration: none; /*ei alleviivauksia linkissä*/
     color: var(--navbar-linkit-color);
-    font-size: 19px;
+    font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 7px;
     border-radius: 10px; 
@@ -95,7 +103,11 @@ nav a {
 
 nav li a:hover{
     color: var(--esittely-color);
-    background-color: var(--navbar-linkit-color); 
+    background-color: var(--navbar-li-hover)
+}
+
+.current {
+    border-bottom: 2px solid #ff6600;
 }
 
 #switch {
@@ -105,8 +117,12 @@ nav li a:hover{
     border: 2px outset var(--switch-border-color);
     border-radius: 10px; 
     padding: 10px 10px; 
-    margin-right: 100px;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    
 }
+
 
 #switch:hover {
     color: var(--background-color);
@@ -119,16 +135,22 @@ nav li a:hover{
 .container1 {   /*tervehdys container */
 
     align-self: center;
-    max-width: 80%;
     /* align-items: center; */
     
     background-color: var(--esittely-color);
     display: flex;
     
     margin: 0 auto;
-    margin-bottom: 20px;
-    
-     
+    margin-bottom: 20px; 
+}
+
+
+#rampse {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom:0px; 
 }
 /* Style the left column (containing the dog image) */
 .left {
@@ -142,7 +164,7 @@ nav li a:hover{
 .right {
     flex: 1; /* Take up 1/2 of the container width */
     padding: 20px;
-    background-color: white;
+    
     ;
 }
 
@@ -152,6 +174,11 @@ h1 {
     color: #333; /* Text color */
 }
 
+h2 {
+    margin: 0 auto;
+    font-size: 25px;
+    
+}
 
 /* Style the additional information at the bottom */
 .bottom-info {
@@ -171,16 +198,67 @@ h1 {
 
 /*----------------GALLERIA-----------------*/
 
+#galtsuTxtjaButtons {
+
+        text-align: center; /* Center text horizontally within the section */
+        padding: 20px; /* Add padding for spacing */   
+        background-color: #f5f6f6;
+        font-size: 16px;
+        color: #555; /* Text color */
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border-radius: 10px;
+        padding-bottom: 60px;
+   
+}
+
+#galtsuTxtjaButtons p {
+    margin-top: 40px;
+}
+
+.albums {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 80px; /* Adjust the gap between buttons as needed */
+    
+}
+.galButton {
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+    font-size: 16px;  
+    padding-top: 10px;
+    margin-top: 40px;
+    background-color: var(--navbar-color);
+    border: none;   
+    border-radius: 10px;  
+    color: #555;
+    transition: transform 0.5s ease-in-out;
+}
+
+.galButton img {
+    width: 120px;
+    height: 120px; 
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+
+    border-radius: 10px; 
+    display: flex;
+}
+
+
+.galButton:hover {
+    transform: scale(1.2);
+    background-color: var(--kansio-hover);
+   
+}
 
 #gallery {        /*koko gallerian "säiliö" kuvineen ja teksteineen*/
     display: grid;  /* more flexible and responsive layout with grip, allows to define how items should be placed in rows/columns */
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /*creates as many columns as possible based on the available space, ensures thah each column will be at least 250 pixels wide, but no wider than 1fr*/
-    gap: 20px; /* space between rows and columns //horizo */
-    padding: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /*creates as many columns as possible based on the available space, ensures thah each column will be at least 250 pixels wide, but no wider than 1fr*/
+    gap: 80px; /* space between rows and columns //horizo */
+    padding: 80px;
     background-color: var(--navbar-color);
-    
-    
-    
+    border-radius: 10px;
+
 }
 
 .kuvat {      /*itse sisältö eli kuva ja teksti*/
@@ -190,18 +268,10 @@ h1 {
     padding: 20px;
     border-radius: 31px;   
     transition: transform 0.5s ease-in-out;
-
-}
-
-
-.kuvat img {  /* pelkkä kuva*/
-
     max-width: 100%; /* Limit image width to its container */
     height: auto;    /* Maintain the aspect ratio */
     border-radius: 20px;
-    
 }
-
 
 .kuvat:hover {
 
@@ -210,7 +280,7 @@ h1 {
     
 }
 
-.kuvat .desc {
+.kuvat .image-title {
  
     background: rgba(48, 48, 48, 0.7);
     color: white;
@@ -222,7 +292,87 @@ h1 {
     
 }
 
-.kuvat:hover .desc {
+.kuvat:hover .image-title {
     transform: translateY(10%);   /*teksti siirtyy kuvan päälle*/
     border-radius: 31px;
+}
+
+
+
+
+
+/*----------------FOOTER-----------------*/
+
+#footer {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--navbar-linkit-color);
+
+}
+
+#back-to-top {
+    display: none;  /* Hidden by default */
+    position: fixed; /* Fixed/sticky position, leijuu kaiken muun päällä */
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; /* tekee nappulasta päällimmäisen */
+    font-size: 26px;
+    background-color: #999;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px; /* Set the width to make it square (adjust as needed) */
+    height: 40px; /* Set the height to make it square (adjust as needed) */
+    padding: 10px;
+    cursor: pointer;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#back-to-top:hover {
+    background-color: #a4b59b;
+}
+
+/* Alussa näytetään navigointilinkit, kun näyttö on suurempi kuin 768px */
+nav {
+    display: block; /* KESKEN */
+  }
+
+/*----------------RESPONSIVE-----------------*/
+
+@media (max-width: 768px) {
+
+    #paaotsikko {
+        font-size: 30px;
+        margin-left: 0px; 
+    }
+
+    #menu-icon {
+        display: inline-block; /* Näytä menu-icon */
+    }
+
+    nav {
+        display: none; /* Piilota navigointilinkit */
+    }
+    nav ul {
+        flex-direction: column; /* Aseta navigointilinkit pystyyn */
+        align-items: center; /* Keskennäköiseksi sivun keskelle */
+    }
+
+    nav li {
+        margin-right: 0; /* Poista väli navigointilinkkien väliltä */
+    }
+
+    nav a {
+        font-size: 16px; /* Pienennä fonttikokoa */
+    }
+
+    #switch {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
 }

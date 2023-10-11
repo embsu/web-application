@@ -1,9 +1,17 @@
-$(function () {
-    $("#header").load("header.html", function () {
+//Tämä tiedosto lataa headerin ja footerin jokaiseen html-tiedostoon, johon se on linkitetty.
+// etsii switch.js -tiedoston ja lataa sen bodyyn, jotta headerin switch toimii jokaisessa html-tiedostossa
 
-        var script = document.createElement('script');
-        script.src = '../assets/javascript/switch.js'; // EN OIKEIN YMMÄRRÄ TÄTÄ
-        document.body.appendChild(script);
+$(function () {
+    $("#header").load("header.html", function () { // lataa header.html:n #header elementtiin sivulla
+
+        
+
     });
-    $("#footer").load("footer.html");
+    $("#footer").load("footer.html"); // lataa footer.html:n #footer elementtiin sivulla
 });
+
+
+
+
+
+
