@@ -4,47 +4,74 @@
 :root {
     --background-color: #dae4da;
     /* --background-image: url("../assets/pictures/tausta1.jpg"); */
-    --esittely-color: #f0f0f0e9;
-    --text-color: #000000;
-    --navbar-color: rgba(255, 255, 255, 0.3); 
-    --navbar-linkit-color: #555;
+    --esittely-color: #f0f0f0a8;
+    --link-hover-color: #eeeeee;
+    --text-color: #505050;
+    --navbar-color: rgba(255, 255, 255, 0.3);
+    --navbar-linkit-color: #505050;
     --navbar-li-hover: #94a594;
     --switch-backg-color: #a4b59b;
     --switch-border-color: #000000;
     --switch-color: #000000;
     --kansio-hover: #c9d1c5;
-  }
-  
-  /* Dark theme variables */
+    --pic-hover: #f0f0f0;
+}
+
+/* Dark theme variables */
 .dark-theme {
     --background-color: #090c0b;
     --background-image: url("../assets/pictures/dark18129294.jpg");
     --text-color: #ffffff;
-    --navbar-color: rgba(45, 45, 45, 0.5); /* vika aiheuttaa transparencyn :) <3*/
+    --navbar-color: rgba(45, 45, 45, 0.5);
+    /* vika aiheuttaa transparencyn :) <3*/
     --navbar-linkit-color: #ffffff;
     --navbar-li-hover: #2e2037;
 
     --switch-backg-color: #444145;
     --switch-color: #ffffff;
-   }
+}
 
 /*----------------BODY-----------------*/
 body {
     /* background-image: var(--background-image);  */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-size: auto; /*täyttää koko sivun vaikka skaalaus oisi miten sattuu, auto ja cover parhaat*/  
-    background-position: 45%;   /*mistä kohti kuvaa vasemmalta oikealle kuva näkyy jos on iso*/
-    background-attachment: fixed;   /* asettaa taustakuvan paikoilleen jolloin sisältö liikkuu mutta taustakuva ei*/
-    background-color: var(--background-color);  /*tää näkyy jos taustakuvan lataamisessa ongelmia*/
-    height: 100vh; /* Set the height of the container to 100% of the viewport height */
+    background-repeat: no-repeat;
+    /* Prevent the image from repeating */
+    background-size: auto;
+    /*täyttää koko sivun vaikka skaalaus oisi miten sattuu, auto ja cover parhaat*/
+    background-position: 45%;
+    /*mistä kohti kuvaa vasemmalta oikealle kuva näkyy jos on iso*/
+    background-attachment: fixed;
+    /* asettaa taustakuvan paikoilleen jolloin sisältö liikkuu mutta taustakuva ei*/
+    background-color: var(--background-color);
+    /*tää näkyy jos taustakuvan lataamisessa ongelmia*/
+    height: 100vh;
+    /* Set the height of the container to 100% of the viewport height */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     letter-spacing: 2px;
     word-spacing: 2px;
-    color: var(--text-color); 
-  
-    }
-  
+    color: var(--text-color);
+}
+
+
+h1 {
+    font-size: 30px;
+    color: var(--navbar-linkit-color);
+}
+
+h2 {
+    
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+
+
+
 /*----------------PÄÄOTSIKKO & NAVBAR-----------------*/
 #menu-icon {
     display: none;
@@ -55,36 +82,40 @@ body {
     color: #a4b59b;
     font-size: 40px;
     text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
-     -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
-      0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
-     margin-left: 70px; 
-  }
-  
+        -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
+        0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
+    margin-left: 70px;
+}
+
 
 .tassu {
     width: 40px;
     height: 40px;
-    margin-left: 20px; 
+    margin-left: 20px;
     vertical-align: middle;
-  }
+}
 
 
-  /* Style for the navbar container */
-.navbar { /* koko navbar pohja ja parent elementti*/
+/* Style for the navbar container */
+.navbar {
+    /* koko navbar pohja ja parent elementti*/
     /* height: 15vh; */
-    display: flex; /* tällä menee otsikon tasolle*/
-    align-items: center; /* tällä menee otsikon tasolle mutta keskelle*/
+    display: flex;
+    /* tällä menee otsikon tasolle*/
+    align-items: center;
+    /* tällä menee otsikon tasolle mutta keskelle*/
     justify-content: space-between;
     background-color: var(--navbar-color);
     margin-bottom: 20px;
     margin-top: 10px;
     position: relative;
 }
-    
+
 nav ul {
     list-style-type: none;
-    margin-right: 150px; 
-    display: flex; /* menee vierekkäin */
+    margin-right: 150px;
+    display: flex;
+    /* menee vierekkäin */
 }
 
 nav li {
@@ -93,34 +124,35 @@ nav li {
 }
 
 nav a {
-    text-decoration: none; /*ei alleviivauksia linkissä*/
+    text-decoration: none;
+    /*ei alleviivauksia linkissä*/
     color: var(--navbar-linkit-color);
     font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 7px;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
-nav li a:hover{
-    color: var(--esittely-color);
-    background-color: var(--navbar-li-hover)
+nav li a:hover {
+    color: var(--link-hover-color);
+    background-color: var(--navbar-li-hover);
 }
 
-.current {
-    border-bottom: 2px solid #ff6600;
-}
+/* .current {
+    border-bottom: 2px solid #ff6600;  EI TOIMI 
+} */
 
 #switch {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: var(--switch-backg-color);
     color: var(--switch-color);
     border: 2px outset var(--switch-border-color);
-    border-radius: 10px; 
-    padding: 10px 10px; 
+    border-radius: 10px;
+    padding: 10px 10px;
     position: absolute;
     right: 20px;
     top: 80px;
-    
+
 }
 
 
@@ -129,86 +161,153 @@ nav li a:hover{
     background-color: var(--switch-color);
     border: 2px outset var(--background-color);
 }
-    
+
 /*----------------ESITTELY-----------------*/
 
-.container1 {   /*tervehdys container */
+.container1 {
+    /*tervehdys container */
 
-    align-self: center;
-    /* align-items: center; */
-    
     background-color: var(--esittely-color);
     display: flex;
+    /* menee vierekkäin */
+    justify-content: center;
+    /* Center content horizontally and vertically */
+    max-height: 400px;
+    /* Set the desired height for the container */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    max-width: 80%;
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+    /* background: linear-gradient(90deg, rgba(227,22,22,0) 0%, rgba(255,0,0,1) 55%, rgba(236,63,63,0) 100%);
+    background: linear-gradient(90deg, rgba(240,240,240,0) 8%, rgba(240,240,240,0.893516732865021) 50%, rgba(240,240,240,0) 92%); */
+
+    background: radial-gradient(circle, rgba(240,240,240,1) 0%, rgba(240, 240, 240, 0) 94%);
     
-    margin: 0 auto;
-    margin-bottom: 20px; 
 }
 
 
-#rampse {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 0 auto;
-    margin-bottom:0px; 
-}
 /* Style the left column (containing the dog image) */
 .left {
-    
-    flex: 1; /* Take up 1/2 of the container width */
-    padding: 20px; 
-    margin-left: 100px;
+    flex: 1;
+    /* Take up 1/2 of the container width */
+    padding: 20px;
+    margin-left: 300px;
+}
+
+#rampse {
+    max-width: 100%;
+    max-height: 100%;
+    /* Set the image height to 100% of its container's height */
 }
 
 /* Style the right column (containing the welcoming text) */
 .right {
     flex: 1; /* Take up 1/2 of the container width */
     padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack the child elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin-right: 50px;
     
-    ;
 }
 
 /* Style the welcoming text */
-h1 {
-    font-size: 24px;
-    color: #333; /* Text color */
+.esittelyH1 {
+    font-size: 30px;
+    color: var(--navbar-linkit-color);
 }
 
-h2 {
+.esittelyBoxit h2 {
     margin: 0 auto;
-    font-size: 25px;
-    
+    font-size: 20px;
+}
+
+.container1 p {
+    font-size: 18px;
+    color: #555;
+    /* Text color */
 }
 
 /* Style the additional information at the bottom */
 .bottom-info {
-    background-color: #f0f0f0; /* Grey background color */
+    background-color: var(--esittely-color);
+    /* Grey background color */
     text-align: center;
     padding: 10px 0;
     max-width: 80%;
     margin: 0 auto;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Style the paragraph inside the bottom info div */
 .bottom-info p {
     font-size: 16px;
-    color: #555; /* Text color */
+    color: var(--navbar-linkit-color);
+    /* Text color */
 }
+
+/* Style the boxit section */
+.esittelyBoxit {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    cursor: pointer;
+   
+    
+}
+
+.esittelyBox {
+    text-align: center;
+    width: 400px;
+    max-height: 300px;
+    padding: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--esittely-color);
+    font-size: 17px;
+}
+
+.esittelyBox:hover {
+    color: var(--link-hover-color);
+    background-color: var(--navbar-li-hover) 
+    
+}
+
+.esittelyBox img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.esittelyBoxit a {
+
+    text-decoration: none;
+    /*ei alleviivauksia linkissä*/
+    color: var(--navbar-linkit-color);
+    
+}
+
+
 
 
 /*----------------GALLERIA-----------------*/
 
 #galtsuTxtjaButtons {
 
-        text-align: center; /* Center text horizontally within the section */
-        padding: 20px; /* Add padding for spacing */   
-        background-color: #f5f6f6;
-        font-size: 16px;
-        color: #555; /* Text color */
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        border-radius: 10px;
-        padding-bottom: 60px;
-   
+    text-align: center;
+    /* Center text horizontally within the section */
+    padding: 20px;
+    /* Add padding for spacing */
+    background-color: var(--esittely-color);
+    font-size: 16px;
+    color: var(--navbar-linkit-color);
+    /* Text color */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    padding-bottom: 60px;
+
 }
 
 #galtsuTxtjaButtons p {
@@ -217,85 +316,144 @@ h2 {
 
 .albums {
     display: flex;
-    justify-content: center; /* Center buttons horizontally */
-    gap: 80px; /* Adjust the gap between buttons as needed */
-    
+    justify-content: center;
+    /* Center buttons horizontally */
+    gap: 80px;
+    /* Adjust the gap between buttons as needed */
+
 }
+
 .galButton {
-    font-family: Georgia, 'Times New Roman', Times, serif;  
-    font-size: 16px;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
     padding-top: 10px;
     margin-top: 40px;
-    background-color: var(--navbar-color);
-    border: none;   
-    border-radius: 10px;  
-    color: #555;
-    transition: transform 0.5s ease-in-out;
+    
+    border: none;
+    border-radius: 10px;
+    color: var(--navbar-linkit-color);
+    
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
 }
 
 .galButton img {
     width: 120px;
-    height: 120px; 
+    height: 120px;
     margin-right: 10px;
     margin-bottom: 5px;
     margin-left: 10px;
-
-    border-radius: 10px; 
-    display: flex;
-}
-
-
-.galButton:hover {
-    transform: scale(1.2);
-    background-color: var(--kansio-hover);
-   
-}
-
-#gallery {        /*koko gallerian "säiliö" kuvineen ja teksteineen*/
-    display: grid;  /* more flexible and responsive layout with grip, allows to define how items should be placed in rows/columns */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /*creates as many columns as possible based on the available space, ensures thah each column will be at least 250 pixels wide, but no wider than 1fr*/
-    gap: 80px; /* space between rows and columns //horizo */
-    padding: 80px;
-    background-color: var(--navbar-color);
     border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-in-out;
+    margin-bottom: 29px;
+}
+
+
+
+#puppyFolder:hover {
+    background-color: #c6e6b4;
+}
+#adultFolder:hover {
+    background-color: #a6cea2;
+
+}
+#friendFolder:hover {
+    background-color: #9fd2bc;
+}
+
+.galButton img:hover {
+    transform: scale(1.2); 
+}
+
+/*-------------Gallerian sisältö--------*/
+#gallery {
+    /*koko gallerian "säiliö" kuvineen ja teksteineen*/
+    display: grid;
+    /* more flexible and responsive layout with grip, allows to define how items should be placed in rows/columns */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /*creates as many columns as possible based on the available space, ensures thah each column will be at least 250 pixels wide, but no wider than 1fr*/
+    gap: 30px;
+    /* space between rows and columns //horizo */
+    padding: 50px;
+    text-align: center;
 
 }
 
-.kuvat {      /*itse sisältö eli kuva ja teksti*/
-    /* margin: 60px 10px 60px 10px; ylä, oikea, ala, vasen */
+.kuvatContainer {
     border: 2px solid var(--navbar-linkit-color);
     background-color: var(--navbar-color);
     padding: 20px;
-    border-radius: 31px;   
+    border-radius: 31px;
     transition: transform 0.5s ease-in-out;
-    max-width: 100%; /* Limit image width to its container */
-    height: auto;    /* Maintain the aspect ratio */
+    background-color: var(--navbar-color);
+    margin-bottom: 20px;
+
+}
+
+.kuvatContainer .kuvat {
+    /*itse sisältö eli kuva ja teksti*/
+    /* margin: 60px 10px 60px 10px; ylä, oikea, ala, vasen */
+    max-width: 100%;
+    /* Limit image width to its container */
+    height: auto;
+    /* Maintain the aspect ratio */
     border-radius: 20px;
 }
 
-.kuvat:hover {
+.kuvatContainer:hover {
 
     transform: scale(1.1);
-    border: 2px solid var(--navbar-linkit-color);
-    
+    border: 2px solid var(--navbar-li-hover);
+    background-color: var(--pic-hover);
+
 }
 
-.kuvat .image-title {
- 
+.kuvatContainer .description {
+
     background: rgba(48, 48, 48, 0.7);
     color: white;
     border: 1px solid #474747;
     padding: 10px;
     text-align: center;
-    transform: translateY(90%);   /*teksi on 100px tai % kuvan alapuolella*/
-    transition: transform 0.3s ease-in-out; /* 0.3 sec viive, täytyy olla täällä koska */
-    
+    transform: translateY(90%);
+    /*teksi on 100px tai % kuvan alapuolella*/
+    transition: transform 0.3s ease-in-out;
+    /* 0.3 sec viive, täytyy olla täällä koska */
+
 }
 
-.kuvat:hover .image-title {
-    transform: translateY(10%);   /*teksti siirtyy kuvan päälle*/
+.kuvatContainer:hover .description {
+    transform: translateY(10%);
+    /*teksti siirtyy kuvan päälle*/
     border-radius: 31px;
 }
+
+
+/*----------------BIO/INFO -----------------*/
+/* .hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 0;
+} */
+
+/* .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+} */
+
+/* .cta-button {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+} */
+
 
 
 
@@ -305,40 +463,160 @@ h2 {
 
 #footer {
     margin-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 100%;
     font-size: 14px;
     text-align: center;
     color: var(--navbar-linkit-color);
+    background-color: var(--navbar-li-hover);
 
 }
 
 #back-to-top {
-    display: none;  /* Hidden by default */
-    position: fixed; /* Fixed/sticky position, leijuu kaiken muun päällä */
-    bottom: 20px;
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position, leijuu kaiken muun päällä */
+    bottom: 50px;
     right: 20px;
-    z-index: 99; /* tekee nappulasta päällimmäisen */
+    z-index: 99;
+    /* tekee nappulasta päällimmäisen */
     font-size: 26px;
-    background-color: #999;
+    background-color: var(--navbar-linkit-color);
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 40px; /* Set the width to make it square (adjust as needed) */
-    height: 40px; /* Set the height to make it square (adjust as needed) */
+    width: 40px;
+    /* Set the width to make it square (adjust as needed) */
+    height: 40px;
+    /* Set the height to make it square (adjust as needed) */
     padding: 10px;
     cursor: pointer;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
 #back-to-top:hover {
-    background-color: #a4b59b;
+    background-color: var(--navbar-li-hover);
 }
 
 /* Alussa näytetään navigointilinkit, kun näyttö on suurempi kuin 768px */
 nav {
-    display: block; /* KESKEN */
-  }
+    display: block;
+    /* KESKEN */
+}
+
+/*---------------------------QUIZ---------------------------*/
+#quizP {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px;
+    background-color: var(--esittely-color);
+    font-size: 18px;
+    color: var(--navbar-linkit-color);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 70%;
+    border: 1px solid var(--navbar-li-hover)
+}
+
+#quiz {
+    max-width: 600px;
+    margin: 30px auto; /* Center the form container */
+    padding: 20px;
+    border: 2px solid #777777;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--navbar-color); 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+
+
+#quiz img{
+max-width: 50%;
+border-radius: 20%;
+margin: 0 aut;
+}
+
+#quiz h2 {
+    
+    margin: 0 auto;
+}
+
+/* Style the submit button */
+form#quiz button[type="button"] {
+    background-color: #e9cded;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    
+    border: 1px solid #673863;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    font: 20px  Georgia, serif;
+}
+
+form#quiz button[type="button"]:hover {
+    background-color: #a133a5;
+    border: 1px solid #000000;
+    color: #ffffff;
+}
+
+.form-control {
+    margin: 20px 0;
+    margin-bottom: 50px;
+    align-items: center; /* Center the content horizontally */
+    text-align: center; /* Center the text horizontally */
+}
+
+
+.rotuClass {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.radio-group label:hover {
+    background-color: #f0f0f0;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: #c5e7c6;
+    color: #000000;
+    border: 1px solid #4caf50;
+}
+
+.radio-group label {
+    transition: background-color 0.2s;
+}
+
+
+
+
+
+
+
+
 
 /*----------------RESPONSIVE-----------------*/
 
@@ -346,27 +624,34 @@ nav {
 
     #paaotsikko {
         font-size: 30px;
-        margin-left: 0px; 
+        margin-left: 0px;
     }
 
     #menu-icon {
-        display: inline-block; /* Näytä menu-icon */
+        display: inline-block;
+        /* Näytä menu-icon */
     }
 
     nav {
-        display: none; /* Piilota navigointilinkit */
+        display: none;
+        /* Piilota navigointilinkit */
     }
+
     nav ul {
-        flex-direction: column; /* Aseta navigointilinkit pystyyn */
-        align-items: center; /* Keskennäköiseksi sivun keskelle */
+        flex-direction: column;
+        /* Aseta navigointilinkit pystyyn */
+        align-items: center;
+        /* Keskennäköiseksi sivun keskelle */
     }
 
     nav li {
-        margin-right: 0; /* Poista väli navigointilinkkien väliltä */
+        margin-right: 0;
+        /* Poista väli navigointilinkkien väliltä */
     }
 
     nav a {
-        font-size: 16px; /* Pienennä fonttikokoa */
+        font-size: 16px;
+        /* Pienennä fonttikokoa */
     }
 
     #switch {

@@ -21,6 +21,119 @@
     <!-- <button id="switch">Switch Theme</button> -->
     <div id="header"></div>
 
+    <p id="quizP"> Täällä voit testata tietämyksesi kuinka hyvin tunnistat eri koirarotuja. <br><br>
+        Onnea matkaan!</p>
+
+    <form id="quiz">
+
+        
+        <h2>Testaa tietämyksesi koiraroduista!</h2>
+
+        <div class="form-control">
+            <label for="q1" class="rotuClass">1. Rotu</label>
+            <img src="assets/pictures/kelmi.jpg">
+
+            <div class="radio-group"> <!--radio-group on oma classi -->
+                <input type="radio" id="q1a" name="q1" value="a"> <!--name="nappi" on tärkee, et voi valita vaan yhen vaihtoehdon-->
+                <label for="q1a">Mopsi</label>
+
+                <input type="radio" id="q1b" name="q1" value="b"> <!--valuet javascriptiä varten-->
+                <label for="q1b">Bullmastiffi</label>
+
+                <input type="radio" id="q1c" name="q1" value="c">
+                <label for="q1c">Chihuahua</label>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label for="q2">2. Rotu<img src="assets/pictures/jupe.jpg"></label>
+
+            <div class="radio-group"> <!--radio-group on oma classi -->
+                <input type="radio" id="q2a" name="q2" value="a"> <!--name="nappi" on tärkee, et voi valita vaan yhen vaihtoehdon-->
+                <label for="q2a">Kultainennoutaja</label>
+
+                <input type="radio" id="q2b" name="q2" value="b">
+                <label for="q2b">Pyreneittenkoira</label>
+
+                <input type="radio" id="q2c" name="q2" value="c">
+                <label for="q2c">Labradorinnoutaja</label>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label for="q3">3. Rotu<img src="assets/pictures/heppi.jpg"></label>
+
+            <div class="radio-group"> <!--radio-group on oma classi -->
+                <input type="radio" id="q3a" name="q3" value="a"> <!--name="nappi" on tärkee, et voi valita vaan yhen vaihtoehdon-->
+                <label for="q3a">Bordercollie</label>
+
+                <input type="radio" id="q3b" name="q3" value="b">
+                <label for="q3b">Shetlanninlammaskoira</label>
+
+                <input type="radio" id="q3c" name="q3" value="c">
+                <label for="q3c">Collie</label>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label for="q4">4. Rotu<img src="assets/pictures/meloni.jpg"></label>
+
+            <div class="radio-group"> <!--radio-group on oma classi -->
+                <input type="radio" id="q4a" name="q4" value="a"> <!--name="nappi" on tärkee, et voi valita vaan yhen vaihtoehdon-->
+                <label for="q4a">Corgi</label>
+
+                <input type="radio" id="q4b" name="q4" value="b">
+                <label for="q4b">Mäyräkoira</label>
+
+                <input type="radio" id="q4c" name="q4" value="c">
+                <label for="q4c">Tiibetinspanieli</label>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label for="q5">5. Rotu<img src="assets/pictures/koira123.jpg"></label>
+
+            <div class="radio-group"> <!--radio-group on oma classi -->
+                <input type="radio" id="q5a" name="q5" value="a"> <!--name="nappi" on tärkee, et voi valita vaan yhen vaihtoehdon-->
+                <label for="q5a">Belgianpaimenkoira</label>
+
+                <input type="radio" id="q5b" name="q5" value="b">
+                <label for="q5b">Saksanpaimenkoira</label>
+
+                <input type="radio" id="q5c" name="q5" value="c">
+                <label for="q5c">Islanninlammaskoira</label>
+            </div>
+        </div>
+
+        <div class="form-control">
+            <label for="q6">6. Rotu<img src="assets/pictures/swiss.jpg"></label>
+
+            <div class="radio-group"> <!--radio-group on oma classi -->
+                <input type="radio" id="q6a" name="q6" value="a"> <!--name="nappi" on tärkee, et voi valita vaan yhen vaihtoehdon-->
+                <label for="q6a">Valkoinen paimenkoira</label>
+
+                <input type="radio" id="q6b" name="q6" value="b">
+                <label for="q6b">Pohjanpystykorva</label>
+
+                <input type="radio" id="q6c" name="q6" value="c">
+                <label for="q6c">Volpino italiano</label>
+            </div>
+        </div>
+
+        <div class="button">
+            <button type="button" value="submit" id="submit">
+                Lähetä
+            </button>
+        </div>
+
+        <div id="score-container">
+            <!-- Score will be displayed here -->
+        </div>
+
+      
+    </form>
+
+    <script src="assets/javascript/quiz.js"></script>
 </body>
 
 <footer>
