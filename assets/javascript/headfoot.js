@@ -3,9 +3,7 @@
 
 $(function () {
     $("#header").load("header.html", function () { // lataa header.html:n #header elementtiin sivulla
-
         
-
     });
     $("#footer").load("footer.html"); // lataa footer.html:n #footer elementtiin sivulla
 });

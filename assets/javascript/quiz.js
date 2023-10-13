@@ -63,7 +63,7 @@ function displayScore() {
         scoreContainer.innerHTML += "<br>HÖH! Et saanut yhtään oikein. Yritä uudelleen!";
       } else if (score === 6) {
         scoreContainer.innerHTML += "<br>Onneksi olkoon! Olet varsinainen rotutietäjä!";
-      } else if (score >= 3 || score <= 5) {
+      } else if (score >= 3 && score <= 5) {
         scoreContainer.innerHTML += "<br>Hyvä! Olet melko hyvin perillä koiraroduista!";
       } else { // score >= 1
         scoreContainer.innerHTML += "<br>Yritä uudelleen! Kyllä se siitä!";
@@ -75,8 +75,9 @@ function displayScore() {
   if (submitButton) {
       submitButton.addEventListener("click", function () {
           console.log("Button clicked!");
-          quizForm.reset(); // Reset the form to unselect all radio buttons
+          
           displayScore();
+          quizForm.reset(); // Reset the form to unselect all radio buttons
 
       });
   }
