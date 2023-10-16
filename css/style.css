@@ -434,67 +434,152 @@ nav li a:hover {
 
 
 /*----------------BIO/INFO -----------------*/
-.hero {
-    background-image: url('hero-background.jpg');
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 5rem 0;
-} */
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
- .cta-button {
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-}
-
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px;
-    cursor: pointer;
+.info-container{
+    
     width: 80%;
     margin: 0 auto;
-    
-    
-}
-
-.feature {
+    margin-top: 40px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1.5fr;
+    grid-template-areas: 
+    "sidebar main main main"
+    "sidebar content1 content2 content3";
+    grid-gap: 1rem;
     text-align: center;
-    width: 400px;
-    max-height: 300px;
-    padding: 30px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: var(--esittely-color);
-    font-size: 17px;
+    background-color: #a4b59b;
+    padding: 10px;
     border-radius: 10px;
 }
 
+.info-container h2{
+    font-size: 20px;
+    margin-bottom: 30px;
 
-
-.feature img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 20px;
 }
-
-.features a {
-
-    text-decoration: none;
-    /*ei alleviivauksia linkissä*/
-    color: var(--navbar-linkit-color);
+.info-container p{
+    font-size: 18px;
     
 }
 
+main {
+    grid-area: main;
+    display: flex;
+}
+
+.main-info, .main-hobbies {
+    flex: 1; /* Equal width for both sections */
+    padding: 10px; /* Optional padding for spacing */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-info {
+
+    background-color: var(--esittely-color);
+    border-radius: 10px 0px 0px 10px;
+
+}
+
+.main-info p {
+ margin-bottom: 10px;
+ text-align: left;
+}
+
+.main-info img {
+    max-width: 50%;
+    border-radius: 20%;
+    border: solid 2px var(--navbar-linkit-color);
+}
+
+.main-hobbies {
+    background-color: var(--esittely-color);
+    border-radius: 0px 10px 10px 0px;
+}
+
+.main-hobbies ul, .main-info ul{
+    list-style-type:circle;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.main-hobbies li, .main-info li {
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 0px;
+}
+#sidebar {
+    background-color: var(--esittely-color);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    grid-area: sidebar;
+    border-radius: 10px;
+    padding: 24px;
+}
+/* Kontsa 1 */
+#content1{
+
+    background-color: var(--esittely-color);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    grid-area: content1;
+    border-radius: 10px;
+
+}
+
+/* Kontsa 2 */
+#content2 {
+
+    background-color: var(--esittely-color);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    grid-area: content2;
+    border-radius: 10px;
+   
+}
+
+.linkit {
+    
+    margin-left: 20px;
+    font-size: 18px;     
+}
+
+.linkit li ::before {
+    
+    content: "🐾";
+    margin-right: 10px;
+}
+
+.linkit li {
+    font-size: 18px;
+    text-align: left;
+    margin-bottom: 10px;
+    list-style-type:none;
+}
 
 
+.linkit a {
+    text-decoration: none;
+    color: var(--navbar-linkit-color);
+    
+    
+}
+.linkit a:hover {
+
+    text-decoration: underline;
+    color: var(--switch-color);
+
+  }
+
+
+
+/* Kontsa 3 */
+#content3 {
+
+    background-color: var(--esittely-color);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    grid-area: content3;
+    border-radius: 10px;
+
+}
 
 
 /*----------------FOOTER-----------------*/
@@ -510,7 +595,6 @@ nav li a:hover {
     text-align: center;
     color: var(--navbar-linkit-color);
     background-color: var(--navbar-li-hover);
-
 }
 
 #back-to-top {
@@ -551,8 +635,9 @@ nav {
 #quizP {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 40px;
     text-align: center;
-    padding: 60px;
+    padding: 70px;
     background-color: var(--esittely-color);
     font-size: 18px;
     color: var(--navbar-linkit-color);
@@ -582,7 +667,6 @@ margin: 0 aut;
 }
 
 #quiz h2 {
-    
     margin: 0 auto;
 }
 
@@ -701,23 +785,49 @@ form#quiz button[type="button"]:hover {
         flex-direction: column;
     }
 
+
+        .features {
+            flex-direction: column;
+        }
+
+
+
     /* .bottom-info {
 
         max-height: 80%;
 
 } */
 
-.left, .right {
-    max-width: 100%; /* Full width for both columns on smaller screens */
-    max-height: none;
-}
+
 #rampse { /*img*/
     height: 80%;
     width: 80%;
 
 }
+.info-container {
+    grid-template-columns: 1.4fr;
+    grid-template-rows: 1.4fr 1.4fr;
+    grid-template-areas:
+    "main"
+    "sidebar"
+    "content1"
+    "content2"
+    "content3";
+    grid-gap: 0.4rem;
+}
 
+}
 
-
-
+@media only screen and (max-width: 550px) {
+    .info-container {
+        grid-template-columns: 1.4fr;
+        grid-template-rows: 1.4fr 1.4fr;
+        grid-template-areas:
+        "main"
+        "sidebar"
+        "content1"
+        "content2"
+        "content3";
+        grid-gap: 0.2rem;
+    }
 }

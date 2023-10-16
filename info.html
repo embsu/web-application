@@ -16,57 +16,111 @@
 </head>
 
 <body>
-    <div id="header"></div>
+    <div id="navigationbar"></div> <!-- latautuu navigationbar.js kautta -->
 
-    
-    <main>
-        <section class="hero">
-            <h1>Ramsen kaverikirja</h1>
-            <p>Tietoja minusta</p>
-            <a href="#" class="cta-button">Aloitetaan!!</a>
-        </section>
+ 
 
-        <section class="features">
-            <div class="feature">
-                <img src="feature1.jpg" alt="Feature 1">
-                <h2>Feature 1</h2>
-                <p>Description of feature 1.</p>
+        <div class="info-container">
+
+            <main> <!--Main sectio käsittää vain  main-infon ja main-hobbies-->
+
+            <div class="main-info"><h2>Perustiedot</h2>
+                
+                <img src="assets/pictures/biop.jpg" alt="lampse">
+
+                <ul class="harrastukset">
+                    <li>Nimi: Ramse</li>
+                    <li>Lempinimet: Rampses, Ramsessa, Lampse </li>
+                    <li>Ikä: 4v</li>
+                    <li>Rotu: Labbis </li>
+                    <li>Väri: Yön musta</li>
+                </ul>
+                
             </div>
-            <div class="feature">
-                <img src="feature2.jpg" alt="Feature 2">
-                <h2>Feature 2</h2>
-                <p>Description of feature 2.</p>
+
+
+            <div class="main-hobbies"><h2>Harrastukset</h2>
+
+                <ul class="harrastukset">
+                    <li>Uiminen, niin vedessä, lumessa kuin asfaltillakin</li>
+                    <li>Kaikenlainen perseily</li>
+                    <li>Liukumäet, toimii lumikasat kuin ihmisetkin</li>
+                    <li>Mamman vieressä köllöttely</li>
+                    <li>Tiskaaminen</li>
+                    <li>Lapasten varastaminen</li>
+                    <li>Kulmakunnan vahvimpana uroksena toimiminen</li>
+                    <li>Tippuneiden hanskojen keräily luonnosta</li>
+                </ul>
+
+
             </div>
-            <div class="feature">
-                <img src="feature3.jpg" alt="Feature 3">
-                <h2>Feature 3</h2>
-                <p>Description of feature 3.</p>
+        
+        </main>
+
+            <div id ="sidebar"> <h2>Rotutietoa</h2>
+                <p>Haettu APIsta</p>
+            
+
+                <div>
+                    <label for="breed-filter">Filter by Breed:</label>
+                    <input type="text" id="breed-filter">
+                    <button id="filter-button">Filter</button>
+                </div>
+                
+                <div id="filtered-breed-list">
+                    <!-- Filtered dog breeds will be displayed here -->
+                </div>
+            
+            
+            
+            
             </div>
-        </section>
-    </main>
+
+            <div id="content1"><h2>Ajastin</h2></div>
+
+            <div id="content2"><h2>Lempparisivut</h2>
 
 
 
 
 
+                <ul class="linkit">
+                    <li><a href="https://www.facebook.com/pertti.perseileva.labradorinnoutaja">Pertti, perseilevä labradorinnoutaja</a></li>
+                    <li><a href="https://www.facebook.com/jussi22">Jussi, tavallisen totinen poika</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100060242573297">Vatkuli</a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </div>
 
-        <!-- <div class="kappale"> 
-        <h3>Hobbies</h3>
-        <ul class="harrastukset">
-            <li>Gym<img src="assets/pictures/barbell.png" alt="paino"></li>
-            <li>Videogames<img src="assets/pictures/videogames.png" alt="videopelit"></li>
-            <li>Hanging out with my pets<img src="assets/pictures/paw.png" alt="tassu"></li>
-            <li>House plants<img src="assets/pictures/plant.png" alt="kasvi"></li>
-            <li>Playing guitar<img src="assets/pictures/guitar.png" alt="kitara"></li>
-            <li>Knitting<img src="assets/pictures/knitting.png" alt="kitara"></li>
-        </ul>
-    </div> -->
+            <div id="content3"><h2>Video riennoista</h2>
+            
+                media
+            
+            </div>
 
+        
+
+        </div> <!--info-container loppuu-->
+
+
+
+
+        
+  
+
+<!-----------------SCRIPTIT------------------>
+
+        <!--Teema switch-->
+        <script src="assets/javascript/switch.js"></script>
+
+        <!--Dog api script-->
+        <script src="assets/javascript/dogapi.js"></script>
 
 </body>
 
 <footer>
-    <div id="footer"></div>
+    <div id="footer"></div> 
+    <!--Footerin mukana script backtotop- scrollaukseen-->
 </footer>
 
 

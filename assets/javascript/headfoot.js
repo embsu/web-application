@@ -1,8 +1,7 @@
-//Tämä tiedosto lataa headerin ja footerin jokaiseen html-tiedostoon, johon se on linkitetty.
-// etsii switch.js -tiedoston ja lataa sen bodyyn, jotta headerin switch toimii jokaisessa html-tiedostossa
+//Tämä tiedosto lataa navigationbarin ja footerin jokaiseen html-tiedostoon, johon se on linkitetty.
 
 $(function () {
-    $("#header").load("header.html", function () { // lataa header.html:n #header elementtiin sivulla
+    $("#navigationbar").load("navigationbar.html", function () { // lataa navigationbar.html:n #navigationbar elementtiin sivulla
         
     });
     $("#footer").load("footer.html"); // lataa footer.html:n #footer elementtiin sivulla
