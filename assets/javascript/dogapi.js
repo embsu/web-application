@@ -1,46 +1,124 @@
-// Replace 'YOUR_API_KEY' with your actual API key
-const apiKey = 'live_dFVawS2FZQHTQa7rhHFszUgLP4VKNNuR0G2XYiMxMR7xRa68ADA3LpJbtGBXEayB';
+document.addEventListener('DOMContentLoaded', function () {
+  const breedInfoDiv = document.getElementById('breed-info');
+  const breedSelect = document.getElementById('breed-select');
+  const apiKey = 'live_dFVawS2FZQHTQa7rhHFszUgLP4VKNNuR0G2XYiMxMR7xRa68ADA3LpJbtGBXEayB'; // Replace with your API key
 
-// Select the filter input field and the filter button
-const filterInput = document.getElementById('breed-filter');
-const filterButton = document.getElementById('filter-button');
 
-// Select the container where filtered breeds will be displayed
-const filteredBreedList = document.getElementById('filtered-breed-list');
-
-// Define a function to filter dog breeds
-function filterDogBreeds() {
-    const breedName = filterInput.value.trim(); // Get the user's input
-    if (breedName === '') {
-        alert('Please enter a breed name or keyword.');
-        return;
-    }
-
-    // Define the URL for filtering dog breeds by breed name
-    const filteredBreedsUrl = `https://api.thedogapi.com/v1/breeds/search?q=${breedName}&api_key=${apiKey}`;
-
-    // Make a request to filter dog breeds by breed name
-    fetch(filteredBreedsUrl)
-        .then(response => response.json())
-        .then(filteredBreedsData => {
-            // Handle the filtered list of dog breeds here
-            console.log(filteredBreedsData); // Log the filtered list of breeds to the console for testing
-
-            // Clear the previous results
-            filteredBreedList.innerHTML = '';
-
-            // Display the filtered list of dog breeds
-            for (const breed of filteredBreedsData) {
-                const breedName = breed.name;
-                const breedListItem = document.createElement('p');
-                breedListItem.textContent = breedName;
-                filteredBreedList.appendChild(breedListItem);
-            }
+        // Fetch the list of dog breeds and populate the dropdown
+        fetch('https://api.thedogapi.com/v1/breeds', {          //tehdään http request ja haetaan koirarodut
+          headers: {
+            'x-api-key': apiKey, // Replace with your API key
+          },
         })
-        .catch(error => {
-            console.error('Error fetching filtered dog breeds:', error);
-        });
-}
+        .then(response => response.json())                      // http response muutetaan json muotoon
+        .then(data => {                                         // ja sijoitetaan muuttujaan data
+          // Populate the dropdown with breed options
+          data.forEach(breed => {
+            const option = document.createElement('option');  //luodaan dropdown menu
+            option.value = breed.id;                           
+            option.textContent = breed.name;
+            breedSelect.appendChild(option);
+          });
 
-// Add an event listener to the filter button
-filterButton.addEventListener('click', filterDogBreeds);
+          // Listen for breed selection changes
+          breedSelect.addEventListener('change', function () {
+            const selectedBreedId = breedSelect.value;
+            // Fetch and display breed information based on the selected breed ID
+            fetchBreedInfo(selectedBreedId);
+          })
+          .catch(error => {                                         //mikäli tulee virhe, tulostetaan virheilmoitus
+            console.error('Error fetching breed list:', error);
+          });
+        });
+
+        function fetchBreedInfo(breedId) { // ---------------------------------RODUN NIMI
+          fetch(`https://api.thedogapi.com/v1/breeds/${breedId}`, {
+            headers: {
+              'x-api-key': apiKey, // Replace with your API key
+            },
+          })
+          .then(response => response.json())
+          .then(breed => {
+            // Create and display HTML elements for breed information
+            const breedNameElement = document.createElement('p');
+            breedNameElement.textContent = breed.name;
+
+            // Now, fetch the images associated with the breed
+            fetchImagesForBreed(breedId, breedNameElement);
+
+            // Append the breedNameElement to the breedInfoDiv
+            breedInfoDiv.innerHTML = ''; // Clear any previous content
+            breedInfoDiv.appendChild(breedNameElement);
+          })
+          .catch(error => {
+            console.error('Error fetching breed information:', error);
+          });
+        }
+
+        function fetchImagesForBreed(breedId, breedNameElement) { // ---------------------------------RODUN KUVA
+          fetch(`https://api.thedogapi.com/v1/images/search?breed_ids=${breedId}`, {
+            headers: {
+              'x-api-key': apiKey, // Replace with your API key
+            },
+          })
+          .then(response => response.json())
+          .then(images => {
+            if (images.length > 0) {
+              // Display the first image of the breed
+              const breedImageElement = document.createElement('img');
+              breedImageElement.src = images[0].url;
+              breedImageElement.alt = 'Breed Image';
+
+              // Append the image to the breedNameElement
+              breedNameElement.appendChild(breedImageElement);
+
+              // Fetch and display breed information
+              fetchBreedDetails(breedId, breedNameElement);
+            } else {
+              console.log('No images available for this breed.');
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching breed images:', error);
+          });
+        }
+
+        function fetchBreedDetails(breedId, breedNameElement) { // ---------------------------------RODUN TIEDOT
+          fetch(`https://api.thedogapi.com/v1/breeds/${breedId}`, {
+            headers: {
+              'x-api-key': apiKey, // Replace with your API key
+            },
+          })
+          .then(response => response.json())
+          .then(breed => {
+            // Create and display HTML elements for breed information
+            const breedTemperamentElement = document.createElement('p');
+            breedTemperamentElement.textContent = `Temperament: ${breed.temperament}`;
+
+            const breedBredForElement = document.createElement('p');
+            breedBredForElement.textContent = `Bred For: ${breed.bred_for}`;
+
+            const breedLifeSpanElement = document.createElement('p');
+            breedLifeSpanElement.textContent = `Life Span: ${breed.life_span}`;
+
+            const breedWeightElement = document.createElement('p');
+            breedWeightElement.textContent = `Weight: ${breed.weight.metric} kg`;
+
+            const breedHeightElement = document.createElement('p');
+            breedHeightElement.textContent = `Height: ${breed.height.metric} cm`;
+
+            
+            breedNameElement.appendChild(breedTemperamentElement);
+            breedNameElement.appendChild(breedBredForElement);
+            breedNameElement.appendChild(breedLifeSpanElement);
+            breedNameElement.appendChild(breedWeightElement);
+            breedNameElement.appendChild(breedHeightElement);
+
+            // Append the breedNameElement to the breedInfoDiv
+            breedInfoDiv.appendChild(breedNameElement);
+          })
+          .catch(error => {
+            console.error('Error fetching breed information:', error);
+          });
+        }
+      });

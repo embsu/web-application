@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/api.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bio</title>
@@ -13,38 +14,43 @@
         </script>
     <script src="assets/javascript/headfoot.js"></script>
 
+
+
+
 </head>
 
 <body>
     <div id="navigationbar"></div> <!-- latautuu navigationbar.js kautta -->
 
- 
 
-        <div class="info-container">
 
-            <main> <!--Main sectio käsittää vain  main-infon ja main-hobbies-->
+    <div class="info-container">
 
-            <div class="main-info"><h2>Perustiedot</h2>
-                
+        <main> <!--Main sectio käsittää vain  main-infon ja main-hobbies-->
+
+            <div class="main-info">
+                <h2>Perustiedot</h2>
+
                 <img src="assets/pictures/biop.jpg" alt="lampse">
 
                 <ul class="harrastukset">
                     <li>Nimi: Ramse</li>
                     <li>Lempinimet: Rampses, Ramsessa, Lampse </li>
-                    <li>Ikä: 4v</li>
+                    <li id="dogAge">Ikä: 4v</li>
                     <li>Rotu: Labbis </li>
                     <li>Väri: Yön musta</li>
                 </ul>
-                
+
             </div>
 
 
-            <div class="main-hobbies"><h2>Harrastukset</h2>
+            <div class="main-hobbies">
+                <h2>Harrastukset</h2>
 
                 <ul class="harrastukset">
                     <li>Uiminen, niin vedessä, lumessa kuin asfaltillakin</li>
                     <li>Kaikenlainen perseily</li>
-                    <li>Liukumäet, toimii lumikasat kuin ihmisetkin</li>
+                    <li>Liukuminen, niin lumikasoissa kuin ihmistenkin päällä</li>
                     <li>Mamman vieressä köllöttely</li>
                     <li>Tiskaaminen</li>
                     <li>Lapasten varastaminen</li>
@@ -54,72 +60,106 @@
 
 
             </div>
-        
+
         </main>
 
-            <div id ="sidebar"> <h2>Rotutietoa</h2>
-                <p>Haettu APIsta</p>
-            
+        <div id="sidebar">
+            <h2>Tutustu koirarotuihin</h2>
+            <p><i>Täältä näet The Dog APIn kautta haettuja tietoja eri koiraroduista.</i></p>
 
-                <div>
-                    <label for="breed-filter">Filter by Breed:</label>
-                    <input type="text" id="breed-filter">
-                    <button id="filter-button">Filter</button>
-                </div>
-                
-                <div id="filtered-breed-list">
-                    <!-- Filtered dog breeds will be displayed here -->
-                </div>
-            
-            
-            
-            
+
+
+            <select id="breed-select">
+                <!-- Dropdown for selecting a breed -->
+            </select>
+            <div id="breed-info">
+                <!-- Breed information and image will be displayed here -->
             </div>
 
-            <div id="content1"><h2>Ajastin</h2></div>
-
-            <div id="content2"><h2>Lempparisivut</h2>
 
 
 
+        </div>
 
-
-                <ul class="linkit">
-                    <li><a href="https://www.facebook.com/pertti.perseileva.labradorinnoutaja">Pertti, perseilevä labradorinnoutaja</a></li>
-                    <li><a href="https://www.facebook.com/jussi22">Jussi, tavallisen totinen poika</a></li>
-                    <li><a href="https://www.facebook.com/profile.php?id=100060242573297">Vatkuli</a></li>
-                    <!-- Add more links as needed -->
-                </ul>
-            </div>
-
-            <div id="content3"><h2>Video riennoista</h2>
+        <div id="content1">
+            <h2>Kaivuuvideo</h2>
             
-                media
-            
-            </div>
+            <video width="320" height="240" controls>
+                <source src="assets/pictures/kuoppa.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Ramsen maansiirto Oy</p>
 
-        
+        </div>
 
-        </div> <!--info-container loppuu-->
+        <div id="content2">
+            <h2>Lempparisivut</h2>
 
 
 
 
-        
-  
 
-<!-----------------SCRIPTIT------------------>
+            <ul class="linkit">
+                <li><img src="assets/pictures/Facebook.png" alt="fb"><a
+                        href="https://www.facebook.com/pertti.perseileva.labradorinnoutaja" target="_blank">Pertti</a>
+                </li>
 
-        <!--Teema switch-->
-        <script src="assets/javascript/switch.js"></script>
+                <li><img src="assets/pictures/Facebook.png" alt="fb"><a href="https://www.facebook.com/jussi22"
+                        target="_blank" class="fb">Jussi</a></li>
 
-        <!--Dog api script-->
-        <script src="assets/javascript/dogapi.js"></script>
+                <li><img src="assets/pictures/Facebook.png" alt="fb"><a
+                        href="https://www.facebook.com/profile.php?id=100060242573297" target="_blank">Vatkuli</a></li>
+
+                <li><img src="assets/pictures/Instagram.png" alt="ig"><a
+                        href="https://www.instagram.com/chocolatelab_bailey/" target="_blank">Bailey & Peanut</a></li>
+
+                <li><img src="assets/pictures/Instagram.png" alt="ig"><a
+                        href="https://www.instagram.com/charlie_theblackshepherd/" target="_blank">Charlie & Moose </a>
+                </li>
+
+                <li><img src="assets/pictures/Instagram.png" alt="ig"><a
+                        href="https://www.instagram.com/rastawhiteshepherd/" target="_blank">Rasta</a></li>
+
+                <!-- Add more links as needed -->
+            </ul>
+        </div>
+
+        <div id="content3">
+            <h2>Syntymäpäivä</h2>
+            <p>Aikaa synttäreihin:</p>
+
+            <div id="countdown"></div>
+
+            <div id="ikaVuodet"></div>
+
+        </div>
+
+       
+
+    </div> <!--info-container loppuu-->
+
+
+
+
+
+
+
+    <!-----------------SCRIPTIT------------------>
+
+    <!--Teema switch-->
+    <script src="assets/javascript/switch.js"></script>
+
+    <!--Dog api script-->
+    <script src="assets/javascript/dogapi.js"></script>
+
+    <!--Countdown script-->
+    <script src="assets/javascript/countdown.js"></script>
+
 
 </body>
 
 <footer>
-    <div id="footer"></div> 
+    <div id="footer"></div>
     <!--Footerin mukana script backtotop- scrollaukseen-->
 </footer>
 

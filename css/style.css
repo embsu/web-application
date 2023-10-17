@@ -10,9 +10,12 @@
     --navbar-color: rgba(255, 255, 255, 0.3);
     --navbar-linkit-color: #505050;
     --navbar-li-hover: #94a594;
-    --switch-backg-color: #a4b59b;
-    --switch-border-color: #000000;
-    --switch-color: #000000;
+    --switch-backg-color: #d9d9d9;
+
+    --switch-border-color: #a01111;
+
+    --switch-icon: url("../assets/pictures/day.png");
+    --switch-color: #bcbcbc;
     --kansio-hover: #c9d1c5;
     --pic-hover: #f0f0f0;
 }
@@ -20,16 +23,13 @@
 /* Dark theme variables */
 .dark-theme {
     --background-color: #090c0b;
-    --background-image: url("../assets/pictures/dark18129294.jpg");
-    --text-color: #ffffff;
-    --navbar-color: rgba(45, 45, 45, 0.5);
-    /* vika aiheuttaa transparencyn :) <3*/
-    --navbar-linkit-color: #ffffff;
-    --navbar-li-hover: #2e2037;
+    --switch-icon: url("../assets/pictures/night.png");
+    --switch-backg-color: #2a2a2a;
 
-    --switch-backg-color: #444145;
-    --switch-color: #ffffff;
+
 }
+
+
 
 /*----------------BODY-----------------*/
 body {
@@ -73,6 +73,7 @@ p {
         -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
         0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
     margin-left: 25vh;
+
 }
 
 
@@ -87,12 +88,9 @@ p {
 
 /* Style for the navbar container */
 .navbar {
-
     display: flex;
-    align-items: center; /*keskittää pystysuunnassa*/
-    /* justify-content: space-between;  */
+    align-items: center;
     background-color: var(--navbar-color);
-    
     margin-top: 10px;
     position: relative;
     box-shadow: 0px 2px 40px rgba(69, 96, 80, 0.2);
@@ -100,20 +98,17 @@ p {
 
 nav ul {
     list-style-type: none;
-    margin-right: 150px;
     display: flex;
-    margin-right: 10px;
- 
+    margin-right: 10px; /* Adjust this margin as needed */
 }
 
+/* Remove margin-right from nav li */
 nav li {
-    margin-right: 30px;
-
+    margin-right: 0;
 }
 
 nav a {
     text-decoration: none;
-    /*ei alleviivauksia linkissä*/
     color: var(--navbar-linkit-color);
     font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -131,26 +126,21 @@ nav li a:hover {
 } */
 
 #switch {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--switch-backg-color);
-    color: var(--navbar-linkit-color);
-    border: 1px outset var(--switch-border-color);
-    border-radius: 10px;
-    padding: 10px 10px;
+    border: none;
+    background: var(--switch-icon) no-repeat center center;
+    background-size: contain; /*koko ikoni näkyy */
+    padding: 0;
     cursor: pointer;
-    transition: background-color 0.5s ease;
-    position: absolute;
-
-    right: 10vh;
-    top: 4vh;
-
+    width: 40px;
+    height: 40px;
+    background-color: var(--switch-backg-color);
+    
 }
-
 
 #switch:hover {
     color: var(--background-color);
     background-color: var(--switch-color);
-    border: 2px outset var(--background-color);
+    
 }
 
 /*----------------ESITTELY-----------------*/
@@ -307,6 +297,8 @@ nav li a:hover {
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 10px;
     padding-bottom: 60px;
+    height: 60vh;
+    
 
 }
 
@@ -445,8 +437,8 @@ nav li a:hover {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.5fr 1.5fr;
     grid-template-areas: 
-    "sidebar main main main"
-    "sidebar content1 content2 content3";
+    "main main main sidebar"
+    "content1 content2 content3 sidebar";
     grid-gap: 1rem;
     text-align: center;
     background-color: #a4b59b;
@@ -515,6 +507,8 @@ main {
     grid-area: sidebar;
     border-radius: 10px;
     padding: 24px;
+    border: solid 2px var(--navbar-linkit-color);
+    
 }
 /* Kontsa 1 */
 #content1{
@@ -523,36 +517,38 @@ main {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     grid-area: content1;
     border-radius: 10px;
-
+}
+#content1 video {
+    max-width: 100%;
+   
 }
 
 /* Kontsa 2 */
 #content2 {
-
     background-color: var(--esittely-color);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     grid-area: content2;
     border-radius: 10px;
+    text-align: center;
    
 }
 
 .linkit {
-    
-    margin-left: 20px;
+    list-style: none;
+    margin-left: 50px;
     font-size: 18px;     
+    padding: 0;
+    
 }
 
-.linkit li ::before {
-    
-    content: "🐾";
-    margin-right: 10px;
-}
+
 
 .linkit li {
-    font-size: 18px;
-    text-align: left;
+    font-size: 16px;
     margin-bottom: 10px;
-    list-style-type:none;
+    display: flex;
+    align-items: center;
+ 
 }
 
 
@@ -562,6 +558,13 @@ main {
     
     
 }
+
+.linkit img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+}
+
 .linkit a:hover {
 
     text-decoration: underline;
@@ -578,7 +581,24 @@ main {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     grid-area: content3;
     border-radius: 10px;
+    font-size: 20px;
+}
 
+#countdown {
+    font-size: 18px;
+    background-color:rgba(207, 183, 209, 0.5);
+    padding: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 7px double #555d65;
+    background: linear-gradient(83deg, rgb(217, 200, 230) 0%, rgb(226, 183, 191) 45%, rgb(223, 208, 186) 83%);
+}
+
+#ikaVuodet {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px;
 }
 
 
@@ -823,11 +843,11 @@ form#quiz button[type="button"]:hover {
         grid-template-columns: 1.4fr;
         grid-template-rows: 1.4fr 1.4fr;
         grid-template-areas:
-        "main"
-        "sidebar"
+        "main"   
         "content1"
         "content2"
-        "content3";
+        "content3"
+        "sidebar";
         grid-gap: 0.2rem;
     }
 }

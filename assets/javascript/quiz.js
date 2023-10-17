@@ -71,13 +71,36 @@ function displayScore() {
     // }
   }
 
-  console.log("Before adding event listener"); // Add this line
+  
   if (submitButton) {
-      submitButton.addEventListener("click", function () {
-          console.log("Button clicked!");
-          
-          displayScore();
-          quizForm.reset(); // Reset the form to unselect all radio buttons
-
+    submitButton.addEventListener("click", function () {
+      console.log("Button clicked!");
+  
+      // Reset results from previous attempts
+      document.querySelectorAll(".result").forEach((result) => {
+          result.textContent = "";
       });
+  
+      displayScore();
+  
+      // For each question, check the selected answer and display the result
+      quizQuestions.forEach((question, index) => {
+          const selectedAnswer = quizForm.querySelector(`input[name="q${index + 1}"]:checked`);
+          const resultElement = document.getElementById(`result${index + 1}`);
+          
+          if (selectedAnswer) {
+              if (selectedAnswer.value === question.answer) {
+                  resultElement.textContent = "Oikein";
+                  resultElement.style.color = "green";
+              } else {
+                  resultElement.textContent = "Väärin";
+                  resultElement.style.color = "red";
+              }
+          } else {
+              resultElement.textContent = "Et valinnut vastausta.";
+          }
+      });
+  
+      quizForm.reset();
+  });
   }

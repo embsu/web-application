@@ -1,0 +1,21 @@
+#breed-select {                 /* VALIKKO*/
+    width: 100%;  
+    border-radius: 20px;
+    border: #94a594;
+    padding:  10px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #eeeeee;
+}
+
+#breed-info {
+ max-height: 100%;
+ font-size: 16px;
+
+}
+
+img {
+   width: 100%;
+   border-radius: 20px;
+}
+
