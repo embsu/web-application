@@ -91,10 +91,10 @@ function displayScore() {
           if (selectedAnswer) {
               if (selectedAnswer.value === question.answer) {
                   resultElement.textContent = "Oikein";
-                  resultElement.style.color = "green";
+                  resultElement.style.color = "#69a86ea8";
               } else {
                   resultElement.textContent = "Väärin";
-                  resultElement.style.color = "red";
+                  resultElement.style.color = "#dc7373a8";
               }
           } else {
               resultElement.textContent = "Et valinnut vastausta.";

@@ -39,7 +39,7 @@ const album2Images = [
     { imageUrl: 'assets/pictures/album2/Plöö.jpeg', description: 'Plöö' },
     { imageUrl: 'assets/pictures/album2/Pultsari.jpg', description: 'Pultsari' },
     { imageUrl: 'assets/pictures/album2/Puolukassa.jpg', description: 'Puolukassa' },
-    { imageUrl: 'assets/pictures/album2/Saunasolmu.jpg', description: 'Saunasolmu' },
+    { imageUrl: 'assets/pictures/album2/Saunasolmu.jpg', description: 'Kuperkeikka' },
     { imageUrl: 'assets/pictures/album2/Talvi.jpeg', description: 'Talvi' },
     { imageUrl: 'assets/pictures/album2/Tuuli tuivertaa.jpeg', description: 'Tuuli tuivertaa' },
     { imageUrl: 'assets/pictures/album2/Veneilemässä.jpg', description: 'Veneilemässä' },

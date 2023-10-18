@@ -3,31 +3,114 @@
 /* Default (light) theme variables */
 :root {
     --background-color: #dae4da;
-    /* --background-image: url("../assets/pictures/tausta1.jpg"); */
-    --esittely-color: #f0f0f0a8;
-    --link-hover-color: #eeeeee;
-    --text-color: #505050;
+    --mainTitlebackg-color: #a4b59b;
+    --mainTitlereunat-color: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
+    -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
+    0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
+    --sivunTassu: url("../assets/pictures/pawslight.png");
+
     --navbar-color: rgba(255, 255, 255, 0.3);
     --navbar-linkit-color: #505050;
-    --navbar-li-hover: #94a594;
-    --switch-backg-color: #d9d9d9;
+    --navbar-hover-backg: #94a594;
+    --navbar-hover-txt-color: #eeeeee;
 
-    --switch-border-color: #a01111;
+    --switch-icon: url("../assets/pictures/night.png");
+    --switch-backg-color: #94a594;
+    --switch-hover-color: #bcbcbc;
 
-    --switch-icon: url("../assets/pictures/day.png");
-    --switch-color: #bcbcbc;
+    --esittely-color: #f0f0f0a8;
+    --text-color: #505050;
+    --esittelyBox-hover: #b7c3b7;
+
+/*----------------BIO-----------------------*/
+
+   --bio-backg-colour: #b0bba8;
+   --countdown-backg-colour: linear-gradient(83deg, rgb(217, 200, 230) 0%, rgb(226, 183, 191) 45%, rgb(223, 208, 186) 83%);
+   --coundown-border: 7px double #555d65;
+   
+/*----------------ALBUMS-----------------------*/
+   
+    --kansio-color: #b7c3b7;  
     --kansio-hover: #c9d1c5;
     --pic-hover: #f0f0f0;
+
+
+ /*----------------QUIZ-----------------------*/
+
+    --label-backg-color: #f0f0f0;
+    --label-backg-hover: #f0f0f0;
+    --label-backg-checked: #c5e7c6;
+    --label-text-checked: #000000;
+    --label-border-checked: #4caf50;
+
+
+
+
+
+
+    --footer-color: #94a594;
 }
 
 /* Dark theme variables */
 .dark-theme {
-    --background-color: #090c0b;
-    --switch-icon: url("../assets/pictures/night.png");
-    --switch-backg-color: #2a2a2a;
+    --background-color: #2e3230;
+    --mainTitlebackg-color: #000000;
+    --mainTitlereunat-color: 2px 2px 0 #89957fa8, 2px -2px 0 #89957fa8, -2px 2px 0 #89957fa8,
+    -2px -2px 0 #89957fa8, 2px 0px 0 #89957fa8, 0px 2px 0 #89957fa8, -2px 0px 0 #89957fa8,
+    0px -2px 0 #89957fa8, 7px 8px 5px rgba(0, 0, 0, 0.79);
+    --sivunTassu: url("../assets/pictures/pawsdark.png");
 
+    --navbar-color: rgba(78, 81, 76, 0.566);
+    --navbar-linkit-color: #c7c7c7;
+    --navbar-hover-backg: rgb(137, 149, 127);
+    --navbar-hover-txt-color: #2a2a2a;
+
+    --switch-icon: url("../assets/pictures/day.png");
+    --switch-backg-color: #bcbcbc;
+    --switch-hover-color: rgb(137, 149, 127);
+
+    --esittely-color: #636a5da8;
+    --text-color: #c7c7c7;
+    --esittelyBox-hover: #8b9483a8;
+
+    /*----------------BIO-----------------------*/
+
+   --bio-backg-colour: rgba(78, 81, 76, 0.566);
+   --countdown-backg-colour: linear-gradient(83deg, rgb(99, 74, 118) 0%, rgb(65, 98, 88) 45%, rgb(61, 122, 137) 99%);
+   --coundown-border: 7px double #111111;
+
+    
+/*----------------ALBUMS-----------------------*/
+   
+    --kansio-color: #b7c3b7;
+    --kansio-hover: #c9d1c5;
+    --pic-hover: #636a5da8;
+
+
+ /*----------------QUIZ-----------------------*/
+
+ --label-backg-color: #343635;
+ --label-backg-hover: #525252;
+ --label-backg-checked: #546154;
+ --label-text-checked: #ffffff;
+ --label-border-checked: #243b24;
+
+
+ /*-------------FOOTER------*/
+    
+    --footer-color: #636a5da8;
+ 
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -46,7 +129,7 @@ body {
 
 h1 {
     font-size: 30px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
  
 }
 
@@ -67,13 +150,22 @@ p {
 
 #paaotsikko {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #a4b59b;
+    color: var(--mainTitlebackg-color);
     font-size: 40px;
-    text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
-        -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
-        0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
-    margin-left: 25vh;
+    text-shadow: var(--mainTitlereunat-color);
+    
+    display: flex;
+    justify-content: center;
+}
 
+#paaotsikko::after{
+    content: var(--sivunTassu);
+    width: 10px;
+    height: 10px;
+    margin-left: 20px;
+ 
+   
+    
 }
 
 
@@ -86,7 +178,6 @@ p {
 }
 
 
-/* Style for the navbar container */
 .navbar {
     display: flex;
     align-items: center;
@@ -94,17 +185,29 @@ p {
     margin-top: 10px;
     position: relative;
     box-shadow: 0px 2px 40px rgba(69, 96, 80, 0.2);
+    justify-content:space-around;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
-nav ul {
+.navbarlinkit {
     list-style-type: none;
     display: flex;
-    margin-right: 10px; /* Adjust this margin as needed */
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center; /* Center the items horizontally */
 }
 
-/* Remove margin-right from nav li */
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
 nav li {
-    margin-right: 0;
+    margin-right: 20px;
 }
 
 nav a {
@@ -117,9 +220,10 @@ nav a {
 }
 
 nav li a:hover {
-    color: var(--link-hover-color);
-    background-color: var(--navbar-li-hover);
+    color: var(--navbar-hover-txt-color);
+    background-color: var(--navbar-hover-backg);
 }
+
 
 /* .current {
     border-bottom: 2px solid #ff6600;  EI TOIMI 
@@ -129,17 +233,19 @@ nav li a:hover {
     border: none;
     background: var(--switch-icon) no-repeat center center;
     background-size: contain; /*koko ikoni näkyy */
-    padding: 0;
+    padding: 10px;
     cursor: pointer;
     width: 40px;
     height: 40px;
     background-color: var(--switch-backg-color);
+    border-radius: 100%;
+    margin-left: 20px;
     
 }
 
 #switch:hover {
-    color: var(--background-color);
-    background-color: var(--switch-color);
+    
+    background-color: var(--switch-hover-color);
     
 }
 
@@ -155,7 +261,7 @@ nav li a:hover {
     max-width: 80%;
     max-height: 50%;
     font-size: 18px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
     margin: 0 auto;
     margin-top: 100px;
     border-radius: 10px;
@@ -172,7 +278,7 @@ nav li a:hover {
 /* Style the welcoming text */
 .esittelyH1 {
     font-size: 30px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
 }
 
 
@@ -224,44 +330,53 @@ nav li a:hover {
 /* Style the paragraph inside the bottom info div */
 .bottom-info p {
     font-size: 16px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
     /* Text color */
 }
 
 
-.esittelyBoxit h2 {
-    margin: 0 auto;
-    font-size: 20px;
-}
-
-
-/* Style the boxit section */
-.esittelyBoxit {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px;
-    cursor: pointer;
+.esittelyBoxit{
+    
     width: 80%;
     margin: 0 auto;
+    margin-top: 40px;
+
+    display: grid;
+    grid-template-columns: 0.7fr 0.7fr 0.7fr; /* kunkin leveys */
+    grid-template-rows: 0.2fr 0.2fr;
+    grid-template-areas: 
+    "dexContent1 dexContent2 dexContent3";
+    grid-gap: 3rem;
     
-    
+   
 }
 
+
+
 .esittelyBox {
-    text-align: center;
-    width: 400px;
-    max-height: 300px;
     padding: 30px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--esittely-color);
     font-size: 17px;
     border-radius: 10px;
+    text-align: center;
+    transition: ease-out 0.3s;
+
+    
+
 }
 
 .esittelyBox:hover {
-    color: var(--link-hover-color);
-    background-color: var(--navbar-li-hover) 
+
+    background-color: var(--esittelyBox-hover);
+    
+}
+
+.esittelyBoxit a {
+
+    text-decoration: none;
+    /*ei alleviivauksia linkissä*/
+    color: var(--text-color);
     
 }
 
@@ -271,12 +386,17 @@ nav li a:hover {
     margin-bottom: 20px;
 }
 
-.esittelyBoxit a {
 
-    text-decoration: none;
-    /*ei alleviivauksia linkissä*/
-    color: var(--navbar-linkit-color);
-    
+#dexContent1 {
+    grid-area: dexContent1;
+}
+
+#dexContent2 {
+    grid-area: dexContent2;
+}
+
+#dexContent3 {
+    grid-area: dexContent3;
 }
 
 
@@ -292,15 +412,19 @@ nav li a:hover {
     /* Add padding for spacing */
     background-color: var(--esittely-color);
     font-size: 16px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
     /* Text color */
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 10px;
     padding-bottom: 60px;
     height: 60vh;
-    
 
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
 }
+
+
 
 #galtsuTxtjaButtons p {
     margin-top: 40px;
@@ -309,9 +433,10 @@ nav li a:hover {
 .albums {
     display: flex;
     justify-content: center;
-    /* Center buttons horizontally */
     gap: 80px;
-    /* Adjust the gap between buttons as needed */
+    margin-top: 40px;
+    
+
 
 }
 
@@ -323,11 +448,13 @@ nav li a:hover {
     
     border: none;
     border-radius: 10px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
     
     cursor: pointer;
     background-color: transparent;
     font-size: 20px;
+    
+    
 }
 
 .galButton img {
@@ -342,6 +469,7 @@ nav li a:hover {
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s ease-in-out;
     margin-bottom: 29px;
+    background-color: var(--kansio-color);
 }
 
 
@@ -372,11 +500,13 @@ nav li a:hover {
     /* space between rows and columns //horizo */
     padding: 50px;
     text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
 
 }
 
 .kuvatContainer {
-    border: 2px solid var(--navbar-linkit-color);
+    border: 2px solid var(--text-color);
     background-color: var(--navbar-color);
     padding: 20px;
     border-radius: 31px;
@@ -399,7 +529,7 @@ nav li a:hover {
 .kuvatContainer:hover {
 
     transform: scale(1.1);
-    border: 2px solid var(--navbar-li-hover);
+    border: 2px solid var(--navbar-hover-backg);
     background-color: var(--pic-hover);
 
 }
@@ -441,7 +571,7 @@ nav li a:hover {
     "content1 content2 content3 sidebar";
     grid-gap: 1rem;
     text-align: center;
-    background-color: #a4b59b;
+    background-color: var(--bio-backg-colour);
     padding: 10px;
     border-radius: 10px;
 }
@@ -465,11 +595,12 @@ main {
     flex: 1; /* Equal width for both sections */
     padding: 10px; /* Optional padding for spacing */
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--esittely-color);
 }
 
 .main-info {
 
-    background-color: var(--esittely-color);
+   
     border-radius: 10px 0px 0px 10px;
 
 }
@@ -482,11 +613,11 @@ main {
 .main-info img {
     max-width: 50%;
     border-radius: 20%;
-    border: solid 2px var(--navbar-linkit-color);
+    border: solid 2px rgb(62, 62, 62);
 }
 
 .main-hobbies {
-    background-color: var(--esittely-color);
+    
     border-radius: 0px 10px 10px 0px;
 }
 
@@ -507,7 +638,7 @@ main {
     grid-area: sidebar;
     border-radius: 10px;
     padding: 24px;
-    border: solid 2px var(--navbar-linkit-color);
+    border: solid 2px var(--text-color);
     
 }
 /* Kontsa 1 */
@@ -554,7 +685,7 @@ main {
 
 .linkit a {
     text-decoration: none;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
     
     
 }
@@ -591,8 +722,8 @@ main {
     max-width: 80%;
     margin: 0 auto;
     border-radius: 20px;
-    border: 7px double #555d65;
-    background: linear-gradient(83deg, rgb(217, 200, 230) 0%, rgb(226, 183, 191) 45%, rgb(223, 208, 186) 83%);
+    border: var(--coundown-border);
+    background: var(--countdown-backg-colour);
 }
 
 #ikaVuodet {
@@ -613,8 +744,8 @@ main {
     width: 100%;
     font-size: 14px;
     text-align: center;
-    color: var(--navbar-linkit-color);
-    background-color: var(--navbar-li-hover);
+    color: var(--text-color);
+    background-color: var(--footer-color);
 }
 
 #back-to-top {
@@ -627,7 +758,7 @@ main {
     z-index: 99;
     /* tekee nappulasta päällimmäisen */
     font-size: 26px;
-    background-color: var(--navbar-linkit-color);
+    background-color: var(--navbar-hover-backg);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -642,7 +773,7 @@ main {
 }
 
 #back-to-top:hover {
-    background-color: var(--navbar-li-hover);
+    background-color: var(--text-color); 
 }
 
 /* Alussa näytetään navigointilinkit, kun näyttö on suurempi kuin 768px */
@@ -660,10 +791,11 @@ nav {
     padding: 70px;
     background-color: var(--esittely-color);
     font-size: 18px;
-    color: var(--navbar-linkit-color);
+    color: var(--text-color);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 70%;
-    border: 1px solid var(--navbar-li-hover)
+    border-radius: 40px;
+    border: 1px solid var(--navbar-hover-backg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.396);
 }
 
 #quiz {
@@ -683,7 +815,7 @@ nav {
 #quiz img{
 max-width: 50%;
 border-radius: 20%;
-margin: 0 aut;
+margin: 0 auto;
 }
 
 #quiz h2 {
@@ -692,13 +824,13 @@ margin: 0 aut;
 
 /* Style the submit button */
 form#quiz button[type="button"] {
-    background-color: #e9cded;
-    color: #000000;
+    background-color: var(--footer-color);
+    color: var(--text-color);
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px 20px;
     
-    border: 1px solid #673863;
+    border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.5s ease;
@@ -706,9 +838,7 @@ form#quiz button[type="button"] {
 }
 
 form#quiz button[type="button"]:hover {
-    background-color: #a133a5;
-    border: 1px solid #000000;
-    color: #ffffff;
+    background-color: var(--switch-hover-color);
 }
 
 .form-control {
@@ -717,7 +847,6 @@ form#quiz button[type="button"]:hover {
     align-items: center; /* Center the content horizontally */
     text-align: center; /* Center the text horizontally */
 }
-
 
 .rotuClass {
     display: flex;
@@ -731,7 +860,7 @@ form#quiz button[type="button"]:hover {
 
 .radio-group label {
     display: block;
-    background-color: #fff;
+    background-color: var(--label-backg-color);
     padding: 10px;
     margin: 5px;
     border: 1px solid #ccc;
@@ -740,13 +869,13 @@ form#quiz button[type="button"]:hover {
 }
 
 .radio-group label:hover {
-    background-color: #f0f0f0;
+    background-color: var(--label-backg-hover);
 }
 
 .radio-group input[type="radio"]:checked + label {
-    background-color: #c5e7c6;
-    color: #000000;
-    border: 1px solid #4caf50;
+    background-color: var(--label-backg-checked);
+    color: var(--label-text-checked);
+    border: 1px solid var(--label-border-checked);
 }
 
 .radio-group label {
@@ -762,7 +891,7 @@ form#quiz button[type="button"]:hover {
 
 
 /*----------------RESPONSIVE-----------------*/
-
+/* Mobile */
 @media (max-width: 768px) {
 
     #paaotsikko {
@@ -834,6 +963,18 @@ form#quiz button[type="button"]:hover {
     "content2"
     "content3";
     grid-gap: 0.4rem;
+}
+
+.esittelyBoxit {
+
+    grid-template-columns: 1fr; /* leveys*/
+    grid-template-rows: 1fr 1fr 1fr; /* korkeus*/
+    grid-template-areas:
+    "dexContent1"
+    "dexContent2"
+    "dexContent3";
+    grid-gap: 0.9rem;
+
 }
 
 }

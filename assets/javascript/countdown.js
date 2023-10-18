@@ -1,8 +1,11 @@
     //----------------------- BION IKÄ
     function calculateAge() {
         const birthYear = 2019; // Your dog's birth year
+
         const currentYear = new Date().getFullYear();
+  
         const age = currentYear - birthYear;
+    
         return age;
       }
     
@@ -10,7 +13,7 @@
       function updateAge() {
         const ageElement = document.getElementById('dogAge');
         const age = calculateAge();
-        ageElement.textContent = `Ikä: ${age}v`;
+        ageElement.textContent = `Ikä: ${age} vuotta`;
       }
     
       // Call the updateAge function to set the initial age
