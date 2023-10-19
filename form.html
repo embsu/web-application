@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/form.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ota yhteyttä</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
+        </script>
+    <script src="assets/javascript/headfoot.js" defer></script>
+
+    <!-- <script src="assets/javascript/underline.js"></script> -->
+
+</head>
+
+<body>
+    
+    <div id="navigationbar"></div> <!-- latautuu navigationbar.js kautta -->
+
+    
+
+        
+
+        <div class="lomake">
+
+            <h2>Kysely- ja palautelomake</h2>
+        <p>Täällä voit jättää palautetta websivuista</p>
+        <p id="kuiskaus"><i>Huom! Lähetä nappi ei oikeasti kerää tietoja tai lähetä niitä minnekkään.</i></p>
+
+
+            <form id="kysely">
+
+                <div class="form-control">
+                  <label for="name" id="label-name">Nimi: </label>
+                  <input type="text" id="name" placeholder="Nimeni on" > 
+                </div>
+
+                  <div class="form-control">
+                  
+                    <label for="email" id="label-email">Sähköposti: </label>
+                    <input type="text" id="email" placeholder="Email ">
+                  </div>
+            
+                <div class="form-control">
+                  <label for="age" id="label-age">Omistatko koiran?</label>
+                  <div class="radio-group">
+                    <input type="radio" id="v1" name="v">
+                    <label for="v1">Kyllä</label>
+            
+                    <input type="radio" id="v2" name="v">
+                    <label for="v2">Ei</label>
+            
+                  </div>
+                </div>
+            
+                <div class="form-control">
+                  <label for="aihe" id="label-aihe">Aihe</label>
+                  <select name="aihe" id="aihe">
+                    <option value="empty">Valitse</option>
+                    <option value="1">Tietokilpailu</option>
+                    <option value="2">Bio</option>
+                    <option value="3">The Dog API</option>
+                    <option value="4">Galleria</option>
+                    <option value="5">Rotuvertailu</option>
+                    <option value="6">Yleiset terveiset</option>
+          
+                  </select>
+                </div>
+              
+
+            
+                <div class="form-control">
+                  <label>Paras tai parhaat kuva-albumit?</label>
+                  <br>
+            
+                  <label for="inp-1" class="custom-checkbox">
+                    <input type="checkbox" id="inp-1">Pentu
+                  </label>
+                  <br>
+            
+                  <label for="inp-2" class="custom-checkbox">
+                    <input type="checkbox" id="inp-2">Iso poika
+                  </label>
+                  <br>
+            
+                  <label for="inp-3" class="custom-checkbox">
+                    <input type="checkbox" id="inp-3">Perhe ja kamut
+                  </label>
+            
+
+                  <br>
+                <div class="form-control">
+                  <label for="message">
+                    Viesti
+                  </label>
+                  <textarea name="message" id="message" placeholder="Kerro huolesi"> </textarea>
+                </div>
+                <div class="button">
+                  <button type="submit" value="submit" id="submit">
+                    Lähetä
+                  </button>
+                </div>
+              </form>
+
+        </div>
+
+    
+
+
+<!-----------------SCRIPTIT------------------>
+
+
+    <!--Teema switch-->
+    <script src="assets/javascript/switch.js"></script>
+
+    <!--Submit alert-->
+    <script src="assets/javascript/formsubmit.js"></script>
+
+</body>
+
+<footer>
+    <div id="footer"></div> 
+    <!--Footerin mukana script backtotop- scrollaukseen-->
+</footer>
+
+
+
+</html>

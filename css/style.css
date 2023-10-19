@@ -2,7 +2,7 @@
 
 /* Default (light) theme variables */
 :root {
-    --background-color: #dae4da;
+    --background-color: #bfc5bf;
     --mainTitlebackg-color: #a4b59b;
     --mainTitlereunat-color: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
     -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
@@ -43,10 +43,15 @@
     --label-text-checked: #000000;
     --label-border-checked: #4caf50;
 
+    --form-backg-colour: #bdcdbdab;
+
+ /*-----------------TABLE------------------------*/
+
+    --table-even-color: rgb(196, 213, 205);
+    --table-odd-color: rgb(172, 191, 182);
 
 
-
-
+/*--------FOOOOTer---------*/
 
     --footer-color: #94a594;
 }
@@ -66,11 +71,11 @@
     --navbar-hover-txt-color: #2a2a2a;
 
     --switch-icon: url("../assets/pictures/day.png");
-    --switch-backg-color: #bcbcbc;
-    --switch-hover-color: rgb(137, 149, 127);
+    --switch-backg-color: rgb(137, 149, 127);
+    --switch-hover-color: #bcbcbc;
 
     --esittely-color: #636a5da8;
-    --text-color: #c7c7c7;
+    --text-color: #cdcdcd;
     --esittelyBox-hover: #8b9483a8;
 
     /*----------------BIO-----------------------*/
@@ -95,6 +100,14 @@
  --label-text-checked: #ffffff;
  --label-border-checked: #243b24;
 
+ --form-backg-colour: #303532;
+
+
+
+ /*-----------------TABLE------------------------*/
+
+    --table-even-color: rgb(55, 64, 59);
+    --table-odd-color: rgb(41, 49, 45);
 
  /*-------------FOOTER------*/
     
@@ -102,17 +115,7 @@
  
 
 }
-
-
-
-
-
-
-
-
-
-
-
+ /*----------------------------------------------------------------------------*/
 
 /*----------------BODY-----------------*/
 body {
@@ -145,7 +148,16 @@ p {
 
 /*----------------PÄÄOTSIKKO & NAVBAR-----------------*/
 #menu-icon { /* nav icon joka tulee mediatilas*/
+    width: 40px;
+    height: 40px;
+    background: url(../assets/pictures/menu-icon.png) no-repeat center center;
+    background-size: contain; /*koko ikoni näkyy */
+    border: none;
+    cursor: pointer;
     display: none;
+    
+    
+
 }
 
 #paaotsikko {
@@ -162,19 +174,7 @@ p {
     content: var(--sivunTassu);
     width: 10px;
     height: 10px;
-    margin-left: 20px;
- 
-   
-    
-}
-
-
-.tassu {
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
-    vertical-align: middle;
-
+    margin-left: 20px;   
 }
 
 
@@ -266,13 +266,7 @@ nav li a:hover {
     margin-top: 100px;
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    
 
-    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
-    /* background: linear-gradient(90deg, rgba(227,22,22,0) 0%, rgba(255,0,0,1) 55%, rgba(236,63,63,0) 100%);
-    background: linear-gradient(90deg, rgba(240,240,240,0) 8%, rgba(240,240,240,0.893516732865021) 50%, rgba(240,240,240,0) 92%); */
-
-    /* background: radial-gradient(circle, rgba(240,240,240,1) 0%, rgba(240, 240, 240, 0) 94%);  */
 }
 
 /* Style the welcoming text */
@@ -701,9 +695,7 @@ main {
     text-decoration: underline;
     color: var(--switch-color);
 
-  }
-
-
+}
 
 /* Kontsa 3 */
 #content3 {
@@ -719,12 +711,16 @@ main {
     font-size: 18px;
     background-color:rgba(207, 183, 209, 0.5);
     padding: 10px;
-    max-width: 80%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 60%;
     margin: 0 auto;
     border-radius: 20px;
     border: var(--coundown-border);
     background: var(--countdown-backg-colour);
 }
+
+
 
 #ikaVuodet {
     margin-top: 10px;
@@ -839,6 +835,7 @@ form#quiz button[type="button"] {
 
 form#quiz button[type="button"]:hover {
     background-color: var(--switch-hover-color);
+    color: var(--label-backg-checked);
 }
 
 .form-control {
@@ -884,34 +881,121 @@ form#quiz button[type="button"]:hover {
 
 
 
+/*----------------------TABLE--------------------*/
+
+
+#rotuvertailu-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    background-color: var(--esittely-color) ;
+    padding: 50px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+#rotuvertailu-container h2 {
+    margin-bottom: 60px;
+    background-color: var(--esittely-color) ;
+    padding: 50px;
+    border-radius: 10px;
+}
+table {
+    
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 16px;
+   
+  }
+  th.saka {
+    width: 100px; /* Adjust the width as needed */
+}
+
+  table img {
+    max-width: 70%;
+    border-radius: 10px;
+  }
+  
+  th, td {
+    border: 1px solid var(--text-color);
+    padding: 8px;
+  }
+  
+  th {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  tr:nth-child(even) {
+    background-color: var(--table-even-color);
+  }
+  
+  tr:nth-child(odd) {
+    background-color: var(--table-odd-color);
+  }
+
+
+  #lahdeCont {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    background-color: var(--esittely-color) ;
+    border-radius: 10px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+
+
+  .lahdeLinkit {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+  }
 
 
 
 
-
-
-/*----------------RESPONSIVE-----------------*/
+/*----------------MEDIA----RESPONSIVE-----------------*/
 /* Mobile */
 @media (max-width: 768px) {
 
     #paaotsikko {
         font-size: 30px;
-        margin-left: 0px;
-       /* JOKU JUTTU ET OTSIKKO MENIS KESKELLE*/
+    }
+
+    #paaotsikko::after{
+        display: flex;
+        margin: 0 auto;
+        margin-left: 30px;
+        width: 5%;
+        height: 5%;
         
     }
 
-
-
-    #menu-icon {
-        display: inline-block;
-        /* Näytä menu-icon */
-    }
-
-    nav {
+    nav a {
         display: none;
         /* Piilota navigointilinkit */
     }
+    .button-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        
+    }
+  
+    #menu-icon {
+        display: block;
+    }
+
+    #switch, #menu-icon {
+        margin: 0;
+    }
+
+  
+  
 
     nav ul {
         flex-direction: column;
@@ -977,7 +1061,21 @@ form#quiz button[type="button"]:hover {
 
 }
 
+table {
+    font-size: 14px;
+    display: block;
 }
+tr {
+    display: block;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+td {
+    display: block;
+}
+
+}
+
 
 @media only screen and (max-width: 550px) {
     .info-container {
@@ -992,3 +1090,47 @@ form#quiz button[type="button"]:hover {
         grid-gap: 0.2rem;
     }
 }
+
+/* Tablet styles */
+/* @media (max-width: 768px) {
+    #paaotsikko {
+        font-size: 30px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbarlinkit {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #switch {
+        margin: 20px 0; 
+    }
+
+
+} */
+
+/* Mobile styles */
+/* @media (max-width: 480px) {
+    #paaotsikko {
+        font-size: 24px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbarlinkit {
+        margin: 0;
+    }
+
+    #switch {
+        margin: 10px 0; 
+    }
+
+   
+} */

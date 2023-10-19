@@ -20,16 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
             breedSelect.appendChild(option);
           });
 
-          // Listen for breed selection changes
-          breedSelect.addEventListener('change', function () {
-            const selectedBreedId = breedSelect.value;
-            // Fetch and display breed information based on the selected breed ID
-            fetchBreedInfo(selectedBreedId);
-          })
-          .catch(error => {                                         //mikäli tulee virhe, tulostetaan virheilmoitus
-            console.error('Error fetching breed list:', error);
-          });
-        });
+           // Listen for breed selection changes
+        breedSelect.addEventListener('change', function () {
+          const selectedBreedId = breedSelect.value;
+          // Fetch and display breed information based on the selected breed ID
+          fetchBreedInfo(selectedBreedId);
+      });
+  })
+  .catch(error => {
+      console.error('Error fetching breed list:', error);
+      document.getElementById('breed-info').innerHTML = 'Virhe rotuja haettaessa';
+  });
 
         function fetchBreedInfo(breedId) { // ---------------------------------RODUN NIMI
           fetch(`https://api.thedogapi.com/v1/breeds/${breedId}`, {
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .catch(error => {
             console.error('Error fetching breed information:', error);
+            document.getElementById('breed-info').innerHTML = 'Error fetching breed information';
           });
         }
 
@@ -80,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
           })
           .catch(error => {
             console.error('Error fetching breed images:', error);
+            
           });
         }
 

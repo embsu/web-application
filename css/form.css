@@ -1,0 +1,136 @@
+.lomake {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p#kuiskaus {
+    font-size: 14px;
+}
+form#kysely {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 50%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 50px 50px 50px 50px;
+    border-radius: 31px 31px 31px 31px;    
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    background-color:  var(--form-backg-colour);
+
+}
+
+/* Style the form controls */
+.form-control {  
+    margin-bottom: 10px;
+    text-align: left;
+    font: 18px  Georgia, serif;
+    
+}
+
+/* Style labels */
+.form-control label {
+    display:block;      /* alkaa uudelta riviltä */  
+    margin-bottom: 15px;
+}
+
+/* Style text inputs */
+.form-control input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #000000;
+    background-color: var(--esittely-color);
+    border-radius: 5px;  
+    color: var(--text-color);
+}
+
+/* Style the radio group container */
+.radio-group {
+    display: flex;
+}
+
+/* Style radio buttons */
+.radio-group input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+/* Style custom radio buttons (using pseudo-elements) */
+.radio-group label::before { /* eli targetetaan labelia ENNEN olevaan asiaan eli labelia ennen tulee radio button joka tässä tehdään*/
+    content: '';
+    display: inline-block;
+    width: 15px; /* Adjust the size as needed */
+    height: 15px; /* Adjust the size as needed */
+    background-color: #e4e4e4; /* Default background color */
+    border: 1px solid #000000; /* Border around the radio button */
+    border-radius: 50%; /* Make it round */
+    margin-right: 10px; /* Spacing between the radio button and label */ 
+    cursor: pointer;
+}
+
+/* Style the label text */
+.radio-group label {
+    display: flex;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+/* Style the radio button when selected */
+.radio-group input[type="radio"]:checked + label::before {
+    background-color: #505050; /* Change the background color when selected */
+    border-color: #000000; /* Change the border color when selected */
+    content: '\2713'; /* Unicode checkmark symbol ✔ */
+    display: inline-block;
+    text-align: center; 
+    line-height: 15px;
+    font-size: 16px;
+    color: #ffffff; /* Change the color of the checkmark */
+}
+
+
+#aihe {
+    background-color: var(--esittely-color);
+    color: var(--text-color);
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+option {
+    background-color: var(--esittely-color);
+    color: black;
+}
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--esittely-color);
+    color: var(--text-color);
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}
+
+
+form#kysely button[type="submit"] {
+    background-color: var(--footer-color);
+    color: var(--text-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    font: 20px  Georgia, serif;
+}
+
+form#kysely button[type="submit"]:hover {
+    background-color: var(--switch-hover-color);
+    color: var(--label-backg-checked);
+}
