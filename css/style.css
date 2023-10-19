@@ -225,9 +225,10 @@ nav li a:hover {
 }
 
 
-/* .current {
-    border-bottom: 2px solid #ff6600;  EI TOIMI 
-} */
+nav li a.current {
+    text-decoration: underline;
+    color: red;
+}
 
 #switch {
     border: none;
@@ -240,6 +241,8 @@ nav li a:hover {
     background-color: var(--switch-backg-color);
     border-radius: 100%;
     margin-left: 20px;
+    transition: ease-out 0.3s;
+
     
 }
 
@@ -290,8 +293,9 @@ nav li a:hover {
 }
 
 #rampse { /*img*/
-   max-width: 100%; /* Ensure the image scales proportionally */
+   max-width: 80%; /* Ensure the image scales proportionally */
     height: auto; /* Allow the image to adjust its height accordingly */
+    
 }
 
 /* Style the right column (containing the welcoming text) */
@@ -301,7 +305,6 @@ nav li a:hover {
     max-width: 60%;
     display: flex;
     flex-direction: column; /* Stack the child elements vertically */
-    
     align-items: center; /* Center content horizontally */
     text-align: center;
    
@@ -571,7 +574,7 @@ nav li a:hover {
 }
 
 .info-container h2{
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 30px;
 
 }
@@ -655,6 +658,7 @@ main {
     grid-area: content2;
     border-radius: 10px;
     text-align: center;
+    
    
 }
 
