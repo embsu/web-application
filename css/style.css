@@ -156,14 +156,12 @@ p {
     cursor: pointer;
     display: none;
     
-    
-
 }
 
 #paaotsikko {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--mainTitlebackg-color);
-    font-size: 40px;
+    font-size: 38px;
     text-shadow: var(--mainTitlereunat-color);
     
     display: flex;
@@ -554,6 +552,12 @@ nav li a.current {
 
 /*----------------BIO/INFO -----------------*/
 
+#grid-body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
 .info-container{
     
     width: 80%;
@@ -662,6 +666,7 @@ main {
    
 }
 
+
 .linkit {
     list-style: none;
     margin-left: 50px;
@@ -739,14 +744,16 @@ main {
     margin-top: 40px;
     padding-bottom: 15px;
     padding-top: 15px;
-    margin-left: 0px;
-    margin-bottom: 0px;
     width: 100%;
     font-size: 14px;
     text-align: center;
     color: var(--text-color);
     background-color: var(--footer-color);
+    grid-area: 2 / 1 / 3 / -1;
 }
+
+
+
 
 #back-to-top {
     display: none;
