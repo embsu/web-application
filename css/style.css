@@ -22,6 +22,8 @@
     --text-color: #505050;
     --esittelyBox-hover: #b7c3b7;
 
+    --mediaRampse-color: #dfe1df;
+
 /*----------------BIO-----------------------*/
 
    --bio-backg-colour: #b0bba8;
@@ -78,6 +80,8 @@
     --text-color: #cdcdcd;
     --esittelyBox-hover: #8b9483a8;
 
+    --mediaRampse-color: #51574d;
+
     /*----------------BIO-----------------------*/
 
    --bio-backg-colour: rgba(78, 81, 76, 0.566);
@@ -123,7 +127,7 @@ body {
     background-color: var(--background-color);
     height: 100vh; /* Full height of browser window */
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     word-spacing: 2px;
     color: var(--text-color);
@@ -141,7 +145,7 @@ h2 {
 }
 
 p {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-color);
 }
 
@@ -155,24 +159,35 @@ p {
     border: none;
     cursor: pointer;
     display: none;
+}
+
+#menu-icon:hover { /* TEE JOS JÄÄ AIKAA */ 
     
+}
+
+
+
+.dropdown-content {
+    display: none;
 }
 
 #paaotsikko {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--mainTitlebackg-color);
-    font-size: 38px;
+    font-size: 34px;
     text-shadow: var(--mainTitlereunat-color);
     
     display: flex;
     justify-content: center;
+
+    white-space: nowrap; /*teksti ei mene eri riveille*/
 }
 
 #paaotsikko::after{
     content: var(--sivunTassu);
-    width: 10px;
-    height: 10px;
+
     margin-left: 20px;   
+    margin-right: 20px;
 }
 
 
@@ -194,14 +209,11 @@ p {
     margin-right: 10px;
     align-items: center;
     justify-content: center; /* Center the items horizontally */
+
+    white-space: nowrap; /*teksti ei mene eri riveille*/
 }
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-}
+
 
 
 nav li {
@@ -211,7 +223,7 @@ nav li {
 nav a {
     text-decoration: none;
     color: var(--navbar-linkit-color);
-    font-size: 17px;
+    font-size: 18px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 7px;
     border-radius: 10px;
@@ -272,7 +284,7 @@ nav li a.current {
 
 /* Style the welcoming text */
 .esittelyH1 {
-    font-size: 30px;
+    font-size: 24px;
     color: var(--text-color);
 }
 
@@ -365,6 +377,7 @@ nav li a.current {
 
     background-color: var(--esittelyBox-hover);
     
+    
 }
 
 .esittelyBoxit a {
@@ -379,6 +392,11 @@ nav li a.current {
     width: 70px;
     height: 70px;
     margin-bottom: 20px;
+    transition: ease-out 0.4s;
+}
+
+.esittelyBox img:hover {
+    transform:rotate(30deg);
 }
 
 
@@ -552,11 +570,6 @@ nav li a.current {
 
 /*----------------BIO/INFO -----------------*/
 
-#grid-body {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    min-height: 100vh;
-}
 
 .info-container{
     
@@ -564,12 +577,13 @@ nav li a.current {
     margin: 0 auto;
     margin-top: 40px;
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.5fr 1.5fr;
     grid-template-areas: 
     "main main main sidebar"
-    "content1 content2 content3 sidebar";
+    "content1 content2 content3 sidebar"
+    "footer footer footer footer";
     grid-gap: 1rem;
     text-align: center;
     background-color: var(--bio-backg-colour);
@@ -737,10 +751,14 @@ main {
     padding: 10px;
 }
 
+#grid-footer {
+    grid-area: footer;
+}
+
 
 /*----------------FOOTER-----------------*/
 
-#footer {
+.footer {
     margin-top: 40px;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -749,7 +767,6 @@ main {
     text-align: center;
     color: var(--text-color);
     background-color: var(--footer-color);
-    grid-area: 2 / 1 / 3 / -1;
 }
 
 
@@ -906,12 +923,7 @@ form#quiz button[type="button"]:hover {
     overflow-x: auto;
 }
 
-#rotuvertailu-container h2 {
-    margin-bottom: 60px;
-    background-color: var(--esittely-color) ;
-    padding: 50px;
-    border-radius: 10px;
-}
+
 table {
     
     width: 90%;
@@ -924,8 +936,9 @@ table {
     width: 100px; /* Adjust the width as needed */
 }
 
+
   table img {
-    max-width: 70%;
+    max-width: 100%;
     border-radius: 10px;
   }
   
@@ -970,8 +983,11 @@ table {
 
 
 /*----------------MEDIA----RESPONSIVE-----------------*/
-/* Mobile */
-@media (max-width: 768px) {
+
+
+@media (max-width: 768px) { /* for tablets.*/
+
+/*--------------------------INDEX.HTML----------------------*/
 
     #paaotsikko {
         font-size: 30px;
@@ -986,95 +1002,134 @@ table {
         
     }
 
-    nav a {
-        display: none;
-        /* Piilota navigointilinkit */
-    }
-    .button-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        
-    }
-  
-    #menu-icon {
+    #menu-icon { /* DROP DOWN VALIKKO NAPPI */
         display: block;
+        
     }
 
     #switch, #menu-icon {
         margin: 0;
     }
 
-  
-  
-
-    nav ul {
-        flex-direction: column;
-        /* Aseta navigointilinkit pystyyn */
+    .button-container { /*teema ja menu nappi*/
+        display: flex;
         align-items: center;
-        /* Keskennäköiseksi sivun keskelle */
+        gap: 40px;    
     }
 
-    nav li {
-        margin-right: 0;
-        /* Poista väli navigointilinkkien väliltä */
+    .navbarlinkit a { /* piilotetaan alkuperäiset nav linkit*/
+        display: none; 
+      }
+
+
+
+/*-------DROPDOWN MENU-------- */
+.navbarlinkit.active + .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    background-color: var(--mediaRampse-color);
+    border-radius: 10px;
+    border: solid 2px var(--text-color);
+    padding: 10px;
+
+    z-index: 1000;
+  }
+ /*-----------------------------*/
+
+.container1 { /* ramse ja tervetuloa */
+        flex-direction: column; /* menee allekkain */
+        max-width: 90%;
+        margin: 0 auto;
+        margin-top: 100px;
+        padding: 20px;
+        padding-bottom: 40px;
+        
+    }
+    .left { /*ramse*/
+        padding: 0;
+        margin-bottom: 5px;
+        
+        border-radius: 20%;
+    }
+    #rampse { /*img*/
+        max-width: 120%;
+        background-color: var(--mediaRampse-color);
+        height: auto;
+        border-radius: 20%;
     }
 
-    nav a {
-        font-size: 16px;
-        /* Pienennä fonttikokoa */
+    .bottom-info {
+        max-width: 90%;
     }
 
-    .container1 {
-        flex-direction: column;
+    .esittelyBox {
+        max-width: 90%;
     }
 
+    .esittelyBoxit {
+        grid-template-columns: 1fr; /* leveys*/
+        grid-template-rows: 1fr 1fr 1fr; /* korkeus*/
+        grid-template-areas:
+        "dexContent1"
+        "dexContent2"
+        "dexContent3";
+        grid-gap: 0.9rem;
+    }
 
-        .features {
-            flex-direction: column;
-        }
-
-
-
-    /* .bottom-info {
-
-        max-height: 80%;
-
-} */
-
-
-#rampse { /*img*/
-    height: 80%;
-    width: 80%;
-
-}
+/*--------------------------BIO-----------------------*/
 .info-container {
-    grid-template-columns: 1.4fr;
-    grid-template-rows: 1.4fr 1.4fr;
+    position: relative;
+    min-height: 100vh; /* Ensure the container covers at least the viewport height */
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 1fr;
     grid-template-areas:
-    "main"
-    "sidebar"
+    "main"  
     "content1"
     "content2"
-    "content3";
-    grid-gap: 0.4rem;
+    "content3"
+    "sidebar"
+    "footer";
+    grid-gap: 0.8rem;
 }
 
-.esittelyBoxit {
+/*-------------------------GALLERIA-----------------------*/
 
-    grid-template-columns: 1fr; /* leveys*/
-    grid-template-rows: 1fr 1fr 1fr; /* korkeus*/
-    grid-template-areas:
-    "dexContent1"
-    "dexContent2"
-    "dexContent3";
-    grid-gap: 0.9rem;
-
+#galtsuTxtjaButtons {
+    padding: 20px;
+    padding-bottom: 40px;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 10px;
 }
+.albums {
+    gap: 40px;
+}
+
+.galButton img {
+    width: 100px;
+    height: 100px;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+
+
+/*--------------------------BREEDTABLE-----------------------*/
 
 table {
     font-size: 14px;
-    display: block;
+    
 }
 tr {
     display: block;
@@ -1085,10 +1140,15 @@ td {
     display: block;
 }
 
+/*--------------------------PALAUTE-----------------------*/
+
+.lomake {
+    min-width: 90%;
 }
 
+}
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 576px) { /*for smartphones.*/
     .info-container {
         grid-template-columns: 1.4fr;
         grid-template-rows: 1.4fr 1.4fr;
@@ -1101,47 +1161,3 @@ td {
         grid-gap: 0.2rem;
     }
 }
-
-/* Tablet styles */
-/* @media (max-width: 768px) {
-    #paaotsikko {
-        font-size: 30px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbarlinkit {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #switch {
-        margin: 20px 0; 
-    }
-
-
-} */
-
-/* Mobile styles */
-/* @media (max-width: 480px) {
-    #paaotsikko {
-        font-size: 24px;
-    }
-
-    .navbar {
-        padding: 10px;
-    }
-
-    .navbarlinkit {
-        margin: 0;
-    }
-
-    #switch {
-        margin: 10px 0; 
-    }
-
-   
-} */

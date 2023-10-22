@@ -1,16 +1,32 @@
-const icon = document.getElementById('menu-icon');
-const nav = document.querySelector('nav');
-const navLinks = document.querySelectorAll(".nav-link");
-
-
-icon.addEventListener('click', () => {
-    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-});
-
-icon.addEventListener("click", () => {
-    navLinks.forEach(link => {
-      link.classList.toggle("shown");
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach a click event listener to a parent element of the button
+  document.body.addEventListener("click", function (event) {
+    if (event.target && event.target.id === "menu-icon") {
+      
+      toggleMenu();
+      console.log("menu-icon clicked");
+    }
   });
 
-  // VITUN KESKEN KOKO PASKA
+  function toggleMenu() {
+    const navbar = document.querySelector('.navbarlinkit');
+    navbar.classList.toggle('active');
+    console.log('active toggled');
+  }
+});
+
+
+
+
+
+
+
+// VANHA // EI TOIMI ILMAN PARENTIN ELEMENT LISTENERIÄ
+
+// document.addEventListener('DOMContentLoaded', function () {
+
+//   document.getElementById('menu-icon').addEventListener('click', function () {
+//     const ul = document.querySelector('.navbarlinkit');
+//     ul.classList.toggle('active');
+//   });
+// });
