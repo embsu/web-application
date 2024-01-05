@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Attach a click event listener to a parent element of the button
+  // click event listener to a parent element of the button
   document.body.addEventListener("click", function (event) {
     if (event.target && event.target.id === "menu-icon") {
       
@@ -14,19 +14,3 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log('active toggled');
   }
 });
-
-
-
-
-
-
-
-// VANHA // EI TOIMI ILMAN PARENTIN ELEMENT LISTENERIÄ
-
-// document.addEventListener('DOMContentLoaded', function () {
-
-//   document.getElementById('menu-icon').addEventListener('click', function () {
-//     const ul = document.querySelector('.navbarlinkit');
-//     ul.classList.toggle('active');
-//   });
-// });

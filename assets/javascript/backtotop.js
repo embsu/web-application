@@ -12,6 +12,6 @@ window.addEventListener("scroll", function () {
 backToTopButton.addEventListener("click", function () {
     window.scrollTo({
         top: 0,
-        behavior: "smooth" // Optional: Add smooth scrolling behavior
+        behavior: "smooth"
     });
 });

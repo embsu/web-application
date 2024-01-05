@@ -5,8 +5,8 @@
     --background-color: #bfc5bf;
     --mainTitlebackg-color: #a4b59b;
     --mainTitlereunat-color: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
-    -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
-    0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
+        -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000,
+        0px -2px 0 #000000, 7px 8px 5px rgba(69, 96, 80, 0.79);
     --sivunTassu: url("../assets/pictures/pawslight.png");
 
     --navbar-color: rgba(255, 255, 255, 0.3);
@@ -24,20 +24,20 @@
 
     --mediaRampse-color: #dfe1df;
 
-/*----------------BIO-----------------------*/
+    /*----------------BIO-----------------------*/
 
-   --bio-backg-colour: #b0bba8;
-   --countdown-backg-colour: linear-gradient(83deg, rgb(217, 200, 230) 0%, rgb(226, 183, 191) 45%, rgb(223, 208, 186) 83%);
-   --coundown-border: 7px double #555d65;
-   
-/*----------------ALBUMS-----------------------*/
-   
-    --kansio-color: #b7c3b7;  
+    --bio-backg-colour: #b0bba8;
+    --countdown-backg-colour: linear-gradient(83deg, rgb(217, 200, 230) 0%, rgb(226, 183, 191) 45%, rgb(223, 208, 186) 83%);
+    --coundown-border: 7px double #555d65;
+
+    /*----------------ALBUMS-----------------------*/
+
+    --kansio-color: #b7c3b7;
     --kansio-hover: #c9d1c5;
     --pic-hover: #f0f0f0;
 
 
- /*----------------QUIZ-----------------------*/
+    /*----------------QUIZ-----------------------*/
 
     --label-backg-color: #f0f0f0;
     --label-backg-hover: #f0f0f0;
@@ -47,13 +47,13 @@
 
     --form-backg-colour: #bdcdbdab;
 
- /*-----------------TABLE------------------------*/
+    /*-----------------TABLE------------------------*/
 
     --table-even-color: rgb(196, 213, 205);
     --table-odd-color: rgb(172, 191, 182);
 
 
-/*--------FOOOOTer---------*/
+    /*--------FOOOOTer---------*/
 
     --footer-color: #94a594;
 }
@@ -63,8 +63,8 @@
     --background-color: #2e3230;
     --mainTitlebackg-color: #000000;
     --mainTitlereunat-color: 2px 2px 0 #89957fa8, 2px -2px 0 #89957fa8, -2px 2px 0 #89957fa8,
-    -2px -2px 0 #89957fa8, 2px 0px 0 #89957fa8, 0px 2px 0 #89957fa8, -2px 0px 0 #89957fa8,
-    0px -2px 0 #89957fa8, 7px 8px 5px rgba(0, 0, 0, 0.79);
+        -2px -2px 0 #89957fa8, 2px 0px 0 #89957fa8, 0px 2px 0 #89957fa8, -2px 0px 0 #89957fa8,
+        0px -2px 0 #89957fa8, 7px 8px 5px rgba(0, 0, 0, 0.79);
     --sivunTassu: url("../assets/pictures/pawsdark.png");
 
     --navbar-color: rgba(78, 81, 76, 0.566);
@@ -84,48 +84,50 @@
 
     /*----------------BIO-----------------------*/
 
-   --bio-backg-colour: rgba(78, 81, 76, 0.566);
-   --countdown-backg-colour: linear-gradient(83deg, rgb(99, 74, 118) 0%, rgb(65, 98, 88) 45%, rgb(61, 122, 137) 99%);
-   --coundown-border: 7px double #111111;
+    --bio-backg-colour: rgba(78, 81, 76, 0.566);
+    --countdown-backg-colour: linear-gradient(83deg, rgb(99, 74, 118) 0%, rgb(65, 98, 88) 45%, rgb(61, 122, 137) 99%);
+    --coundown-border: 7px double #111111;
 
-    
-/*----------------ALBUMS-----------------------*/
-   
+
+    /*----------------ALBUMS-----------------------*/
+
     --kansio-color: #b7c3b7;
     --kansio-hover: #c9d1c5;
     --pic-hover: #636a5da8;
 
 
- /*----------------QUIZ-----------------------*/
+    /*----------------QUIZ-----------------------*/
 
- --label-backg-color: #343635;
- --label-backg-hover: #525252;
- --label-backg-checked: #546154;
- --label-text-checked: #ffffff;
- --label-border-checked: #243b24;
+    --label-backg-color: #343635;
+    --label-backg-hover: #525252;
+    --label-backg-checked: #546154;
+    --label-text-checked: #ffffff;
+    --label-border-checked: #243b24;
 
- --form-backg-colour: #303532;
+    --form-backg-colour: #303532;
 
 
 
- /*-----------------TABLE------------------------*/
+    /*-----------------TABLE------------------------*/
 
     --table-even-color: rgb(55, 64, 59);
     --table-odd-color: rgb(41, 49, 45);
 
- /*-------------FOOTER------*/
-    
+    /*-------------FOOTER------*/
+
     --footer-color: #636a5da8;
- 
+
 
 }
- /*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
 
 /*----------------BODY-----------------*/
 body {
 
     background-color: var(--background-color);
-    height: 100vh; /* Full height of browser window */
+    height: 100vh;
+    /* Full height of browser window */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     letter-spacing: 2px;
@@ -133,11 +135,9 @@ body {
     color: var(--text-color);
 }
 
-
 h1 {
     font-size: 30px;
     color: var(--text-color);
- 
 }
 
 h2 {
@@ -151,21 +151,22 @@ p {
 
 
 /*----------------PÄÄOTSIKKO & NAVBAR-----------------*/
-#menu-icon { /* nav icon joka tulee mediatilas*/
+#menu-icon {
+    /* nav icon joka tulee mediatilas*/
     width: 40px;
     height: 40px;
     background: url(../assets/pictures/menu-icon.png) no-repeat center center;
-    background-size: contain; /*koko ikoni näkyy */
+    background-size: contain;
+    /*koko ikoni näkyy */
     border: none;
     cursor: pointer;
     display: none;
 }
 
-#menu-icon:hover { /* TEE JOS JÄÄ AIKAA */ 
-    
+#menu-icon:hover {
+    /* TEE JOS JÄÄ AIKAA */
+
 }
-
-
 
 .dropdown-content {
     display: none;
@@ -176,20 +177,16 @@ p {
     color: var(--mainTitlebackg-color);
     font-size: 34px;
     text-shadow: var(--mainTitlereunat-color);
-    
     display: flex;
     justify-content: center;
-
-    white-space: nowrap; /*teksti ei mene eri riveille*/
+    white-space: nowrap;
 }
 
-#paaotsikko::after{
+#paaotsikko::after {
     content: var(--sivunTassu);
-
-    margin-left: 20px;   
+    margin-left: 20px;
     margin-right: 20px;
 }
-
 
 .navbar {
     display: flex;
@@ -198,7 +195,7 @@ p {
     margin-top: 10px;
     position: relative;
     box-shadow: 0px 2px 40px rgba(69, 96, 80, 0.2);
-    justify-content:space-around;
+    justify-content: space-around;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -208,11 +205,12 @@ p {
     display: flex;
     margin-right: 10px;
     align-items: center;
-    justify-content: center; /* Center the items horizontally */
+    justify-content: center;
+    /* Center the items horizontally */
 
-    white-space: nowrap; /*teksti ei mene eri riveille*/
+    white-space: nowrap;
+    /*teksti ei mene eri riveille*/
 }
-
 
 nav li {
     margin-right: 20px;
@@ -232,16 +230,11 @@ nav li a:hover {
     background-color: var(--navbar-hover-backg);
 }
 
-
-/* nav li a.current {
-    text-decoration: underline;
-    color: red;
-} */
-
 #switch {
     border: none;
     background: var(--switch-icon) no-repeat center center;
-    background-size: contain; /*koko ikoni näkyy */
+    background-size: contain;
+    /*koko ikoni näkyy */
     padding: 10px;
     cursor: pointer;
     width: 40px;
@@ -250,25 +243,22 @@ nav li a:hover {
     border-radius: 100%;
     margin-left: 20px;
     transition: ease-out 0.3s;
-
-    
 }
 
 #switch:hover {
-    
     background-color: var(--switch-hover-color);
-    
 }
 
 /*----------------ESITTELY-----------------*/
 
 
-.container1 {   /*tervehdys container */
-    
+.container1 {
+    /*tervehdys container */
+
     background-color: var(--esittely-color);
     display: flex;
-    justify-content: center; /* menee vierekkäin */
-    align-items: center; /*emt ainaki rampse menee keskelle*/
+    justify-content: center;
+    align-items: center;
     max-width: 80%;
     max-height: 50%;
     color: var(--text-color);
@@ -279,49 +269,40 @@ nav li a:hover {
 
 }
 
-/* Style the welcoming text */
 .esittelyH1 {
     font-size: 24px;
     color: var(--text-color);
 }
 
-
-/* Style the left column (containing the dog image) */
 .left {
     flex: 1;
     max-width: 40%;
     padding-left: 40px;
-    
     display: flex;
     align-items: center;
-    justify-content: center; /* Center horizontally and vertically */
-   
-
+    justify-content: center;
 }
 
-#rampse { /*img*/
-   max-width: 80%; /* Ensure the image scales proportionally */
-    height: auto; /* Allow the image to adjust its height accordingly */
-    
+#rampse {
+    /*img*/
+    max-width: 80%;
+    height: auto;
+    /* Allow the image to adjust its height accordingly */
 }
 
-/* Style the right column (containing the welcoming text) */
 .right {
-    flex: 1; /* Take up 1/2 of the container width */
+    flex: 1;
+    /* Take up 1/2 of the container width */
     padding: 40px;
     max-width: 60%;
     display: flex;
-    flex-direction: column; /* Stack the child elements vertically */
-    align-items: center; /* Center content horizontally */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-   
-    
 }
 
-/* Style the additional information at the bottom */
 .bottom-info {
     background-color: var(--esittely-color);
-    /* Grey background color */
     text-align: center;
     padding: 10px 0;
     max-width: 80%;
@@ -331,31 +312,23 @@ nav li a:hover {
     border-radius: 10px;
 }
 
-/* Style the paragraph inside the bottom info div */
 .bottom-info p {
     font-size: 16px;
     color: var(--text-color);
-    /* Text color */
 }
 
-
-.esittelyBoxit{
-    
+.esittelyBoxit {
     width: 80%;
     margin: 0 auto;
     margin-top: 40px;
-
     display: grid;
-    grid-template-columns: 0.7fr 0.7fr 0.7fr; /* kunkin leveys */
+    grid-template-columns: 0.7fr 0.7fr 0.7fr;
+    /* kunkin leveys */
     grid-template-rows: 1fr 0.2fr;
-    grid-template-areas: 
-    "dexContent1 dexContent2 dexContent3";
+    grid-template-areas:
+        "dexContent1 dexContent2 dexContent3";
     grid-gap: 3rem;
-    
-   
 }
-
-
 
 .esittelyBox {
     padding: 30px;
@@ -365,24 +338,16 @@ nav li a:hover {
     border-radius: 10px;
     text-align: center;
     transition: ease-out 0.3s;
-
-    
-
 }
 
 .esittelyBox:hover {
-
     background-color: var(--esittelyBox-hover);
-    
-    
 }
 
 .esittelyBoxit a {
-
     text-decoration: none;
     /*ei alleviivauksia linkissä*/
     color: var(--text-color);
-    
 }
 
 .esittelyBox img {
@@ -393,9 +358,8 @@ nav li a:hover {
 }
 
 .esittelyBox img:hover {
-    transform:rotate(30deg);
+    transform: rotate(30deg);
 }
-
 
 #dexContent1 {
     grid-area: dexContent1;
@@ -409,32 +373,22 @@ nav li a:hover {
     grid-area: dexContent3;
 }
 
-
-
-
 /*----------------GALLERIA-----------------*/
 
 #galtsuTxtjaButtons {
-
     text-align: center;
-    /* Center text horizontally within the section */
     padding: 20px;
-    /* Add padding for spacing */
     background-color: var(--esittely-color);
     font-size: 17px;
     color: var(--text-color);
-    /* Text color */
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 10px;
     padding-bottom: 60px;
     height: 60vh;
-
     max-width: 80%;
     margin: 0 auto;
     margin-top: 40px;
 }
-
-
 
 #galtsuTxtjaButtons p {
     margin-top: 40px;
@@ -446,26 +400,18 @@ nav li a:hover {
     justify-content: center;
     gap: 80px;
     margin-top: 40px;
-    
-
-
 }
 
 .galButton {
     font-family: Georgia, 'Times New Roman', Times, serif;
-
     padding-top: 10px;
     margin-top: 40px;
-    
     border: none;
     border-radius: 10px;
     color: var(--text-color);
-    
     cursor: pointer;
     background-color: transparent;
     font-size: 17px;
-    
-    
 }
 
 .galButton img {
@@ -483,21 +429,21 @@ nav li a:hover {
     background-color: var(--kansio-color);
 }
 
-
-
 #puppyFolder:hover {
     background-color: #c6e6b4;
 }
+
 #adultFolder:hover {
     background-color: #a6cea2;
 
 }
+
 #friendFolder:hover {
     background-color: #9fd2bc;
 }
 
 .galButton img:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 /*-------------Gallerian sisältö--------*/
@@ -524,22 +470,18 @@ nav li a:hover {
     transition: transform 0.5s ease-in-out;
     background-color: var(--navbar-color);
     margin-bottom: 20px;
-
 }
 
 .kuvatContainer .kuvat {
-
     max-width: 100%;
     height: auto;
     border-radius: 20px;
 }
 
 .kuvatContainer:hover {
-
     transform: scale(1.1);
     border: 2px solid var(--navbar-hover-backg);
     background-color: var(--pic-hover);
-
 }
 
 .kuvatContainer .description {
@@ -553,7 +495,6 @@ nav li a:hover {
     /*teksi on 100px tai % kuvan alapuolella*/
     transition: transform 0.3s ease-in-out;
     /* 0.3 sec viive, täytyy olla täällä koska */
-
 }
 
 .kuvatContainer:hover .description {
@@ -565,9 +506,7 @@ nav li a:hover {
 
 /*----------------BIO/INFO -----------------*/
 
-
-.info-container{
-    
+.info-container {
     width: 80%;
     margin: 0 auto;
     margin-top: 40px;
@@ -575,10 +514,10 @@ nav li a:hover {
     min-height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.5fr 1.5fr;
-    grid-template-areas: 
-    "main main main sidebar"
-    "content1 content2 content3 sidebar"
-    "footer footer footer footer";
+    grid-template-areas:
+        "main main main sidebar"
+        "content1 content2 content3 sidebar"
+        "footer footer footer footer";
     grid-gap: 1rem;
     text-align: center;
     background-color: var(--bio-backg-colour);
@@ -587,7 +526,7 @@ nav li a:hover {
     font-size: 17px;
 }
 
-.info-container h2{
+.info-container h2 {
     font-size: 20px;
     margin-bottom: 30px;
 }
@@ -597,25 +536,23 @@ main {
     display: flex;
 }
 
-
-.main-info, .main-hobbies {
-    flex: 1; /* Equal width for both sections */
-    padding: 10px; /* Optional padding for spacing */
+.main-info,
+.main-hobbies {
+    flex: 1;
+    padding: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     background-color: var(--esittely-color);
-    
 }
 
 .main-info {
     border-radius: 10px 0px 0px 10px;
-     
+
 }
 
 .main-hobbies {
-    
+
     border-radius: 0px 10px 10px 0px;
 }
-
 
 .main-info img {
     max-width: 50%;
@@ -623,20 +560,19 @@ main {
     border: solid 2px rgb(62, 62, 62);
 }
 
-
-
-.main-hobbies ul, .main-info ul{
-    list-style-type:circle;
+.main-hobbies ul,
+.main-info ul {
+    list-style-type: circle;
     margin-left: 20px;
     font-size: 17px;
-
 }
 
-.main-hobbies li, .main-info li {
+.main-hobbies li,
+.main-info li {
     margin-bottom: 10px;
     text-align: left;
-
 }
+
 #sidebar {
     background-color: var(--esittely-color);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -644,19 +580,20 @@ main {
     border-radius: 10px;
     padding: 24px;
     border: solid 2px var(--text-color);
-    
 }
+
 /* Kontsa 1 */
-#content1{
+#content1 {
 
     background-color: var(--esittely-color);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     grid-area: content1;
     border-radius: 10px;
 }
+
 #content1 video {
     max-width: 100%;
-   
+
 }
 
 /* Kontsa 2 */
@@ -671,30 +608,22 @@ main {
 .linkit {
     list-style: none;
     margin-left: 25px;
-    font-size: 18px;     
+    font-size: 18px;
     padding: 0;
     display: flex;
     flex-direction: column;
-
-    
 }
-
-
 
 .linkit li {
     font-size: 17px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
- 
 }
-
 
 .linkit a {
     text-decoration: none;
     color: var(--text-color);
-    
-    
 }
 
 .linkit img {
@@ -707,7 +636,6 @@ main {
 
     text-decoration: underline;
     color: var(--navbar-hover-backg);
-
 }
 
 /* Kontsa 3 */
@@ -725,7 +653,7 @@ main {
 
 #countdown {
     font-size: 17px;
-    background-color:rgba(207, 183, 209, 0.5);
+    background-color: rgba(207, 183, 209, 0.5);
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -736,8 +664,6 @@ main {
     background: var(--countdown-backg-colour);
 }
 
-
-
 #ikaVuodet {
     margin-top: 10px;
     font-size: 17px;
@@ -747,7 +673,6 @@ main {
 #grid-footer {
     grid-area: footer;
 }
-
 
 /*----------------FOOTER-----------------*/
 
@@ -762,41 +687,31 @@ main {
     background-color: var(--footer-color);
 }
 
-
-
-
 #back-to-top {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Fixed/sticky position, leijuu kaiken muun päällä */
     bottom: 50px;
     right: 20px;
     z-index: 99;
-    /* tekee nappulasta päällimmäisen */
     font-size: 26px;
     background-color: var(--navbar-hover-backg);
     color: #fff;
     border: none;
     border-radius: 50%;
     width: 40px;
-    /* Set the width to make it square (adjust as needed) */
     height: 40px;
-    /* Set the height to make it square (adjust as needed) */
     padding: 10px;
     cursor: pointer;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 #back-to-top:hover {
-    background-color: var(--text-color); 
+    background-color: var(--text-color);
 }
 
 /* Alussa näytetään navigointilinkit, kun näyttö on suurempi kuin 768px */
 nav {
     display: block;
-    /* KESKEN */
 }
 
 /*---------------------------QUIZ---------------------------*/
@@ -817,41 +732,39 @@ nav {
 
 #quiz {
     max-width: 600px;
-    margin: 30px auto; /* Center the form container */
+    margin: 30px auto;
+    /* Center the form container */
     padding: 20px;
     border: 2px solid #777777;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background-color: var(--navbar-color); 
+    background-color: var(--navbar-color);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
 }
 
-
-
-#quiz img{
-max-width: 50%;
-border-radius: 20%;
-margin: 0 auto;
+#quiz img {
+    max-width: 50%;
+    border-radius: 20%;
+    margin: 0 auto;
 }
 
 #quiz h2 {
     margin: 0 auto;
 }
 
-/* Style the submit button */
+/* submit button */
 form#quiz button[type="button"] {
     background-color: var(--footer-color);
     color: var(--text-color);
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px 20px;
-    
     border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.5s ease;
-    font: 20px  Georgia, serif;
+    font: 20px Georgia, serif;
 }
 
 form#quiz button[type="button"]:hover {
@@ -862,8 +775,8 @@ form#quiz button[type="button"]:hover {
 .form-control {
     margin: 20px 0;
     margin-bottom: 50px;
-    align-items: center; /* Center the content horizontally */
-    text-align: center; /* Center the text horizontally */
+    align-items: center;
+    text-align: center;
 }
 
 .rotuClass {
@@ -890,7 +803,7 @@ form#quiz button[type="button"]:hover {
     background-color: var(--label-backg-hover);
 }
 
-.radio-group input[type="radio"]:checked + label {
+.radio-group input[type="radio"]:checked+label {
     background-color: var(--label-backg-checked);
     color: var(--label-text-checked);
     border: 1px solid var(--label-border-checked);
@@ -900,156 +813,152 @@ form#quiz button[type="button"]:hover {
     transition: background-color 0.2s;
 }
 
-
-
 /*----------------------TABLE--------------------*/
-
 
 #rotuvertailu-container {
     width: 80%;
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
-    background-color: var(--esittely-color) ;
+    background-color: var(--esittely-color);
     padding: 50px;
     border-radius: 10px;
     overflow-x: auto;
 }
 
-
 table {
-    
     width: 90%;
     margin: 0 auto;
     border-collapse: collapse;
     font-size: 16px;
-   
-  }
-  th.saka {
-    width: 100px; /* Adjust the width as needed */
+}
+
+th.saka {
+    width: 100px;
 }
 
 
-  table img {
+table img {
     max-width: 100%;
     border-radius: 10px;
-  }
-  
-  th, td {
+}
+
+th,
+td {
     border: 1px solid var(--text-color);
     padding: 8px;
-  }
-  
-  th {
+}
+
+th {
     background-color: var(--background-color);
     color: var(--text-color);
-  }
-  
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: var(--table-even-color);
-  }
-  
-  tr:nth-child(odd) {
+}
+
+tr:nth-child(odd) {
     background-color: var(--table-odd-color);
-  }
+}
 
-
-  #lahdeCont {
+#lahdeCont {
     width: 80%;
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
-    background-color: var(--esittely-color) ;
+    background-color: var(--esittely-color);
     border-radius: 10px;
     overflow-x: auto;
     padding-bottom: 20px;
-  }
+}
 
-
-  .lahdeLinkit {
+.lahdeLinkit {
     text-decoration: none;
     color: var(--text-color);
     font-size: 16px;
-  }
-
-
-
+}
 
 /*----------------MEDIA----RESPONSIVE-----------------*/
 
+@media (max-width: 768px) {
+    /* for tablets.*/
 
-@media (max-width: 768px) { /* for tablets.*/
-
-/*--------------------------INDEX.HTML----------------------*/
+    /*--------------------------INDEX.HTML----------------------*/
 
     #paaotsikko {
         font-size: 30px;
     }
 
-    #paaotsikko::after{
+    #paaotsikko::after {
         display: flex;
         margin: 0 auto;
         margin-left: 30px;
         width: 5%;
         height: 5%;
-        
     }
 
-    #menu-icon { /* DROP DOWN VALIKKO NAPPI */
+    #menu-icon {
+        /* DROP DOWN VALIKKO NAPPI */
         display: block;
-        
     }
 
-    #switch, #menu-icon {
+    #switch,
+    #menu-icon {
         margin: 0;
     }
 
-    .button-container { /*teema ja menu nappi*/
+    .button-container {
+        /*teema ja menu nappi*/
         display: flex;
         align-items: center;
-        gap: 40px;    
+        gap: 40px;
     }
 
-    .navbarlinkit a { /* piilotetaan alkuperäiset nav linkit*/
-        display: none; 
-      }
+    .navbarlinkit a {
+        /* piilotetaan alkuperäiset nav linkit*/
+        display: none;
+    }
 
 
+    /*-------DROPDOWN MENU-------- */
+    .navbarlinkit.active+.dropdown-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        right: 0;
 
-/*-------DROPDOWN MENU-------- */
-.navbarlinkit.active + .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 100%;
-    right: 0;
+        background-color: var(--mediaRampse-color);
+        border-radius: 10px;
+        border: solid 2px var(--text-color);
+        padding: 10px;
+        z-index: 1000;
+    }
 
-    background-color: var(--mediaRampse-color);
-    border-radius: 10px;
-    border: solid 2px var(--text-color);
-    padding: 10px;
+    /*-----------------------------*/
 
-    z-index: 1000;
-  }
- /*-----------------------------*/
-
-.container1 { /* ramse ja tervetuloa */
-        flex-direction: column; /* menee allekkain */
+    .container1 {
+        /* ramse ja tervetuloa */
+        flex-direction: column;
+        /* menee allekkain */
         max-width: 90%;
         margin: 0 auto;
         margin-top: 100px;
         padding: 20px;
         padding-bottom: 40px;
-        
     }
-    .left { /*ramse*/
+
+    .left {
+        /*ramse*/
         padding: 0;
         margin-bottom: 5px;
-        
         border-radius: 20%;
     }
-    #rampse { /*img*/
+
+    #rampse {
+        /*img*/
         max-width: 120%;
         background-color: var(--mediaRampse-color);
         height: auto;
@@ -1065,92 +974,95 @@ table {
     }
 
     .esittelyBoxit {
-        grid-template-columns: 1fr; /* leveys*/
-        grid-template-rows: 1fr 1fr 1fr; /* korkeus*/
+        grid-template-columns: 1fr;
+        /* leveys*/
+        grid-template-rows: 1fr 1fr 1fr;
+        /* korkeus*/
         grid-template-areas:
-        "dexContent1"
-        "dexContent2"
-        "dexContent3";
+            "dexContent1"
+            "dexContent2"
+            "dexContent3";
         grid-gap: 0.9rem;
     }
 
-/*--------------------------BIO-----------------------*/
-.info-container {
-    position: relative;
-    min-height: 100vh; /* Ensure the container covers at least the viewport height */
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 1fr;
-    grid-template-areas:
-    "main"  
-    "content1"
-    "content2"
-    "content3"
-    "sidebar"
-    "footer";
-    grid-gap: 0.8rem;
+    /*--------------------------BIO-----------------------*/
+    .info-container {
+        position: relative;
+        min-height: 100vh;
+        /* Ensure the container covers at least the viewport height */
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 1fr;
+        grid-template-areas:
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "sidebar"
+            "footer";
+        grid-gap: 0.8rem;
+    }
+
+    /*-------------------------GALLERIA-----------------------*/
+
+    #galtsuTxtjaButtons {
+        padding: 20px;
+        padding-bottom: 40px;
+        max-width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
+        border-radius: 10px;
+    }
+
+    .albums {
+        gap: 40px;
+    }
+
+    .galButton img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /*--------------------------BREEDTABLE-----------------------*/
+
+    table {
+        font-size: 14px;
+    }
+
+    tr {
+        display: block;
+        border: 1px solid #ccc;
+        margin: 10px 0;
+    }
+
+    td {
+        display: block;
+    }
+
+    /*--------------------------PALAUTE-----------------------*/
+
+    .lomake {
+        min-width: 90%;
+    }
+
 }
 
-/*-------------------------GALLERIA-----------------------*/
+@media only screen and (max-width: 576px) {
 
-#galtsuTxtjaButtons {
-    padding: 20px;
-    padding-bottom: 40px;
-    max-width: 90%;
-    margin: 0 auto;
-    margin-top: 40px;
-    border-radius: 10px;
-}
-.albums {
-    gap: 40px;
-}
-
-.galButton img {
-    width: 100px;
-    height: 100px;
-}
-
-#gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-
-
-
-
-/*--------------------------BREEDTABLE-----------------------*/
-
-table {
-    font-size: 14px;
-    
-}
-tr {
-    display: block;
-    border: 1px solid #ccc;
-    margin: 10px 0;
-}
-td {
-    display: block;
-}
-
-/*--------------------------PALAUTE-----------------------*/
-
-.lomake {
-    min-width: 90%;
-}
-
-}
-
-@media only screen and (max-width: 576px) { /*for smartphones.*/
+    /*for smartphones.*/
     .info-container {
         grid-template-columns: 1.4fr;
         grid-template-rows: 1.4fr 1.4fr;
         grid-template-areas:
-        "main"   
-        "content1"
-        "content2"
-        "content3"
-        "sidebar";
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "sidebar";
         grid-gap: 0.2rem;
     }
 }

@@ -1,10 +1,9 @@
 const imageContainer = document.getElementById('gallery');
-const showPuppyButton = document.getElementById('showPuppy'); // puppyButton
+const showPuppyButton = document.getElementById('showPuppy'); 
 const showAdultButton = document.getElementById('showAdult');
 const showFriendsButton = document.getElementById('showFriends');
 
-// Define your image URLs for each folder
-//-------Pentualbumi
+//-------Puppy album
 const album1Images = [
     { imageUrl: 'assets/pictures/album1/suspicious.jpg', description: 'Suspicious' },
     { imageUrl: 'assets/pictures/album1/Autoilija.jpg', description: 'Ajelulla' },
@@ -25,7 +24,7 @@ const album1Images = [
     { imageUrl: 'assets/pictures/album1/Eka joulu.jpeg', description: 'Eka joulu' }
 ];
 
-//-------Aikuisalbumi
+//-------Adult album
 const album2Images = [
     { imageUrl: 'assets/pictures/album2/hhhh.jpg', description: 'Ei lisättävää' },
     { imageUrl: 'assets/pictures/album2/Hiekkakärsä.jpg', description: 'Hiekkakärsä' },
@@ -46,7 +45,7 @@ const album2Images = [
     { imageUrl: 'assets/pictures/album2/Lätäkkö.jpg', description: 'Väliviilennys' },
 ];
 
-//-------Kaverialbumi
+//-------Buddy album
 const album3Images = [
     { imageUrl: 'assets/pictures/album3/Lakaisu.jpg', description: 'Annas ku autan' },
     { imageUrl: 'assets/pictures/album3/Ipanat.jpg', description: 'Tänne sitä herkkua' },
@@ -60,34 +59,31 @@ const album3Images = [
     { imageUrl: 'assets/pictures/album3/Herra Lucifer.jpg', description: 'Kissaveli Lucifer' },
 ];
 
-// Function to load images for a folder
+// load images for a folder
 function loadImages(images) {
     imageContainer.innerHTML = '';  // Clear previous images
-    images.forEach(imageData => {    // Loop through each image URL //for loop
+    images.forEach(imageData => {    // Loop through each image URL
 
-        const imgContainer = document.createElement('div'); // Create a container for the images (div tag)
-        const image = document.createElement('img');        // Create the image element (img tag)
-        const description = document.createElement('div');  // Create a description element (div tag)
+        const imgContainer = document.createElement('div'); // container for the images
+        const image = document.createElement('img');        // the image element 
+        const description = document.createElement('div');  // description element
 
-        imgContainer.classList.add('kuvatContainer');   // Add 'kuvatContainer' class to the image container
-        image.classList.add('kuvat');                   // Add 'kuvat' class to the image element
-        description.classList.add('description');       // Add 'description' class to the description element
-
+        imgContainer.classList.add('kuvatContainer');   // add 'kuvatContainer' class to the image container
+        image.classList.add('kuvat');                   // add 'kuvat' class to the image element
+        description.classList.add('description');       // add 'description' class to the description element
         
-        image.src = imageData.imageUrl; // Set the image source to the image URL
-        image.alt = 'Image';    // kuvan nimi sillonkun ei näy
-        description.textContent = imageData.description; // Set the description text to the image description
+        image.src = imageData.imageUrl; // image source to the image URL
+        image.alt = 'Image';    // pic alt name when image is not found
+        description.textContent = imageData.description; // description text to the image description
 
-        imgContainer.appendChild(image); // Append the image to the container
-        imgContainer.appendChild(description); // Append the description to the container
-        imageContainer.appendChild(imgContainer); // Append the image container to the main container
+        imgContainer.appendChild(image); // append the image to the container
+        imgContainer.appendChild(description); // append the description to the container
+        imageContainer.appendChild(imgContainer); // append the image container to the main container
     });
 }
 
-// Add event listeners for folder buttons
-showPuppyButton.addEventListener('click', () => loadImages(album1Images)); //eli kun painaa puppybuttonia, loadimages funktio käynnistyy
+// event listeners for folder buttons
+showPuppyButton.addEventListener('click', () => loadImages(album1Images)); //when you click the button, load images from the folder
 showAdultButton.addEventListener('click', () => loadImages(album2Images));
 showFriendsButton.addEventListener('click', () => loadImages(album3Images));
 
-// Load initial images (you can change this to load a default folder)
-// loadImages(folder1Images);

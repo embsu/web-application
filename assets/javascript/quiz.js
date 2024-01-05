@@ -1,9 +1,9 @@
 class Quiz {
   constructor() {
-    this.quizForm = document.getElementById("quiz"); // this eli tämän luokan quizForm on sama kuin html-tiedoston id="quiz"
+    this.quizForm = document.getElementById("quiz");
     this.submitButton = document.getElementById("submit");
     this.scoreContainer = document.getElementById("score-container");
-    this.quizQuestions = [ // array of objects
+    this.quizQuestions = [ 
       {
         question: "1. Rotu",
         answer: "b"
@@ -32,9 +32,9 @@ class Quiz {
 
   } // constructor end
 
-  // funktio jolla lasketaan pisteet
+  // to calculate the score
   calculateScore() {
-    let score = 0;      // let on muuttuja, joka voi muuttua
+    let score = 0;      // let can be changed, const can't be changed
     this.quizQuestions.forEach((question, index) => {
       const selectedAnswer = this.quizForm.querySelector(`input[name="q${index + 1}"]:checked`);
       if (selectedAnswer && selectedAnswer.value === question.answer) {
@@ -45,9 +45,9 @@ class Quiz {
     return score;
   }
 
-  // funktio jolla näytetään pisteet
+  // show the score
   displayScore() {
-    const score = this.calculateScore(); // tässä kutsutaan yllä olevaa funktiota
+    const score = this.calculateScore(); // call the calculateScore function
     console.log("Score palautettu", score);
     this.scoreContainer.innerHTML = `Pisteesi: ${score}/${this.quizQuestions.length}`;
     if (score === 0) {
@@ -64,14 +64,13 @@ class Quiz {
   init() {
     if (this.submitButton) {
       this.submitButton.addEventListener("click", () => {
-        // Reset results from previous attempts
-        document.querySelectorAll(".result").forEach((result) => { //käytetään arrow functionia event handlerina
+        // reset results from previous attempts
+        document.querySelectorAll(".result").forEach((result) => { 
           result.textContent = "";
         });
 
         this.displayScore();
-
-        // For each question, check the selected answer and display the result
+        // for each question, check the selected answer and display the result
         this.quizQuestions.forEach((question, index) => {
           const selectedAnswer = this.quizForm.querySelector(`input[name="q${index + 1}"]:checked`);
           const resultElement = document.getElementById(`result${index + 1}`);
@@ -95,6 +94,6 @@ class Quiz {
   }
 }
 
-// Create an instance of the Quiz class and initialize it
+// create an instance of the quiz class and initialize it
 const quizInstance = new Quiz();
 quizInstance.init();

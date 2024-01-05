@@ -1,10 +1,10 @@
-//Tämä tiedosto lataa navigationbarin ja footerin jokaiseen html-tiedostoon, johon se on linkitetty.
+// this file is used to load the navigationbar and footer to the page
 
 $(function () {
-    $("#navigationbar").load("navigationbar.html", function () { // lataa navigationbar.html:n #navigationbar elementtiin sivulla
+    $("#navigationbar").load("navigationbar.html", function () { // loads navigationbar.html to #navigationbar element on the page
         
     });
-    $("#footer").load("footer.html"); // lataa footer.html:n #footer elementtiin sivulla
+    $("#footer").load("footer.html"); // loads footer.html to #footer element on the page
 });
 
 
