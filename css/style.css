@@ -27,7 +27,7 @@
     /*----------------BIO-----------------------*/
 
     --bio-backg-colour: #b0bba8;
-    --countdown-backg-colour: linear-gradient(83deg, rgb(217, 200, 230) 0%, rgb(226, 183, 191) 45%, rgb(223, 208, 186) 83%);
+    --countdown-backg-colour: linear-gradient(83deg, rgb(111, 121, 111) 0%, rgb(184, 226, 213) 45%, rgb(92, 147, 122) 99%);
     --coundown-border: 7px double #555d65;
 
     /*----------------ALBUMS-----------------------*/
@@ -85,7 +85,7 @@
     /*----------------BIO-----------------------*/
 
     --bio-backg-colour: rgba(78, 81, 76, 0.566);
-    --countdown-backg-colour: linear-gradient(83deg, rgb(99, 74, 118) 0%, rgb(65, 98, 88) 45%, rgb(61, 122, 137) 99%);
+    --countdown-backg-colour: linear-gradient(83deg, rgb(55, 67, 55) 0%, rgb(65, 98, 88) 45%, rgb(49, 69, 60) 99%);
     --coundown-border: 7px double #111111;
 
 

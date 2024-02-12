@@ -1,66 +1,61 @@
-    //----------------------- BION IKÄ
-    function calculateAge() {
-        const birthYear = 2019; // birth year
+var birthday = new Date('2019-07-01');
 
-        const currentYear = new Date().getFullYear();
-  
-        const age = currentYear - birthYear;
-    
-        return age;
-      }
-    
-      // update the age in the HTML
-      function updateAge() {
-        const ageElement = document.getElementById('dogAge');
-        const age = calculateAge();
-        ageElement.textContent = `Ikä: ${age} vuotta`;
-      }
-    
-      updateAge();
-  
-  //--------------------------COUNTDOWN
-  function getNextBirthday() {
-    const today = new Date();
-    const birthDate = new Date(today.getFullYear(), 6, 1); // july 1st
-    if (today > birthDate) {
-      // if this year's birthday has already passed, calculate for the next year
-      birthDate.setFullYear(today.getFullYear() + 1);
-    }
-    return birthDate;
+//----------BION IKÄ
+function calculateAge() {
+
+  var currentDate = new Date();
+  var differenceInDays = (currentDate - birthday) / (1000 * 60 * 60 * 24); // 1000ms * 60s * 60min * 24h
+  var ageyears = Math.floor(differenceInDays / 365.25);
+  var differenceInMonths = Math.floor(differenceInDays / 30.44) - (ageyears * 12);
+
+  document.getElementById('dogAge').innerHTML = `Ikä: ${ageyears} vuotta, ${differenceInMonths} kuukautta`;
+  return ageyears;
+};
+
+calculateAge()
+
+
+//--------------------------COUNTDOWN
+function countdownForComingBirthday() {
+
+  var today = new Date();
+  // next birhday (thisyear, month, day)
+  var nextBirthday = new Date(today.getFullYear(), birthday.getMonth(), birthday.getDate());
+  if (today > nextBirthday) {
+    nextBirthday.setFullYear(today.getFullYear() + 1);
   }
+  return nextBirthday;
+}
 
-  // update the countdown and age
-  function updateCountdown() {
-    const nextBirthday = getNextBirthday();
-    const currentDate = new Date();
-    const timeRemaining = nextBirthday - currentDate;
+// update the countdown and age
+function updateCountdown() {
+  var currentDate = new Date();
+  var nextBirthday = countdownForComingBirthday()
+  var timeRemaining = nextBirthday - currentDate;
+  var age = calculateAge();
 
-    // calculate age
-    const age = currentDate.getFullYear() - 2019;
+  if (timeRemaining <= 0) {
+    document.getElementById('countdown').innerHTML = `Happy ${age}th Birthday!`;
+  } else {
+    var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    if (timeRemaining <= 0) {
-      // birthday has passed
-      document.getElementById('countdown').innerHTML = `Happy ${age}th Birthday!`;
-    } else {
-      // calculate days, hours, minutes, and seconds
-      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-      // display the result
-      document.getElementById('countdown').innerHTML = `${days} päivää <br> 
+    // display the result
+    document.getElementById('countdown').innerHTML = `${days} päivää <br> 
       ${hours} tuntia <br>
        ${minutes} minuuttia <br>
         ${seconds} sekuntia <br> `;
 
-        document.getElementById('ikaVuodet').innerHTML = `jolloin täytän ${age + 1} vuotta!`;
-
-    }
+    document.getElementById('ikaVuodet').innerHTML = `jolloin täytän ${age + 1} vuotta!`;
   }
+}
 
-  // update the countdown every second
-  setInterval(updateCountdown, 1000);
+// update the countdown every second
+setInterval(updateCountdown, 1000);
 
-  // initial update
-  updateCountdown();
+// initial update
+updateCountdown();
+
+
